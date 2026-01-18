@@ -1,0 +1,49 @@
+export function Footer() {
+  return (
+    <footer className="py-12 px-4 sm:px-6 lg:px-8 border-t border-border">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex items-center gap-2">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8">
+              <defs>
+                <linearGradient id="footerLogoGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style={{stopColor:"#2563EB"}}/>
+                  <stop offset="100%" style={{stopColor:"#0EA5E9"}}/>
+                </linearGradient>
+                <linearGradient id="footerLogoGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style={{stopColor:"#3B82F6"}}/>
+                  <stop offset="100%" style={{stopColor:"#06B6D4"}}/>
+                </linearGradient>
+              </defs>
+              <rect width="32" height="32" rx="8" fill="url(#footerLogoGrad1)"/>
+              {/* Financial chart bars forming the "F" */}
+              <rect x="7" y="8" width="2.5" height="15" rx="1" fill="white" opacity="0.9"/>
+              <rect x="7" y="8" width="6" height="2.5" rx="1" fill="white" opacity="0.9"/>
+              <rect x="7" y="14.5" width="5" height="2.5" rx="1" fill="white" opacity="0.9"/>
+              {/* Financial trend line forming the "P" */}
+              <rect x="16" y="8" width="2.5" height="15" rx="1" fill="white" opacity="0.9"/>
+              <path d="M 16 8 L 21 8 Q 24 8 24 12 Q 24 16 21 16 L 16 16" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+              {/* AI Neural Network nodes */}
+              <circle cx="10" cy="5" r="1.5" fill="url(#footerLogoGrad2)" opacity="0.8"/>
+              <circle cx="24" cy="5" r="1.5" fill="url(#footerLogoGrad2)" opacity="0.8"/>
+              <circle cx="28" cy="12" r="1.5" fill="url(#footerLogoGrad2)" opacity="0.8"/>
+              <circle cx="28" cy="22" r="1.5" fill="url(#footerLogoGrad2)" opacity="0.8"/>
+              {/* AI connection lines */}
+              <path d="M 10 5 Q 16 3 24 5" stroke="url(#footerLogoGrad2)" strokeWidth="1" fill="none" opacity="0.6"/>
+              <path d="M 24 5 L 28 12" stroke="url(#footerLogoGrad2)" strokeWidth="1" fill="none" opacity="0.5"/>
+              <path d="M 12 23 Q 18 24 28 22" stroke="url(#footerLogoGrad2)" strokeWidth="1" fill="none" opacity="0.5"/>
+              {/* Ascending chart bars */}
+              <rect x="4" y="26" width="1.5" height="4" rx="0.75" fill="url(#footerLogoGrad2)" opacity="0.7"/>
+              <rect x="6.5" y="24" width="1.5" height="6" rx="0.75" fill="url(#footerLogoGrad2)" opacity="0.7"/>
+              <rect x="9" y="22" width="1.5" height="8" rx="0.75" fill="url(#footerLogoGrad2)" opacity="0.7"/>
+            </svg>
+            <span className="text-lg font-semibold text-foreground">FinaPilot</span>
+          </div>
+
+
+          <p className="text-sm text-muted-foreground">© 2026 FinaPilot. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  )
+}
