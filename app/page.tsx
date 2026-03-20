@@ -17,7 +17,7 @@ import { Footer } from "@/components/footer"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#0B0F19]">
+    <main className="min-h-screen bg-[#0B0F19] overflow-x-hidden max-w-full relative">
       <Header />
       
       {/* 1. Hero — First Impression: Value proposition, metrics, integrations ticker */}

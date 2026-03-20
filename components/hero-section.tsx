@@ -40,21 +40,21 @@ export function HeroSection() {
              Autonomous intelligence for human-direct oversight. FinaPilot orchestrates <span className="text-white">12 specialized AI agents</span> to forecast, audit, and protect your capital—combining <span className="text-accent underline underline-offset-8 decoration-accent/30 decoration-2">&lt;4ms</span> recalculation speed with absolute provenance and human control.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-20 px-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-20 px-6">
             <Button
               size="lg"
               className="bg-accent text-accent-foreground px-10 h-16 text-sm font-black rounded-2xl shadow-[0_20px_40px_rgba(0,242,255,0.2)] hover:shadow-[0_25px_50px_rgba(0,242,255,0.3)] hover:scale-[1.02] transition-all group w-full sm:w-auto uppercase tracking-widest"
               onClick={openCalendly}
             >
-              Request Access
+              Apply for Pilot Forge
               <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1.5 transition-transform" />
             </Button>
             <div className="flex flex-col items-start gap-1 p-4 rounded-xl glass-premium border border-white/5 bg-white/3 min-w-[240px] w-full sm:w-auto group">
                <div className="flex items-center gap-3">
-                  <Activity className="w-4 h-4 text-emerald-400 animate-pulse" />
-                  <span className="text-[10px] font-black uppercase tracking-widest text-emerald-400">Hyperblock™ Active</span>
+                  <Activity className="w-4 h-4 text-accent animate-pulse" />
+                  <span className="text-[10px] font-black uppercase tracking-widest text-accent">Co-Design Synergy</span>
                </div>
-               <span className="text-xs text-white/50 font-medium group-hover:text-white/80 transition-colors">1.2M compute nodes / second</span>
+               <span className="text-xs text-white/50 font-medium group-hover:text-white/80 transition-colors">Join as a Founding Pilot Partner</span>
             </div>
           </div>
         </div>
