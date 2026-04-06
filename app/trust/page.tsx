@@ -7,7 +7,7 @@ import { Footer } from "@/components/footer"
 export default function TrustCenterPage() {
   return (
     <div className="bg-[#fafbfc] text-slate-800 min-h-screen font-sans">
-      <Header />
+      {/* Navbar hidden on Trust page due to color contradiction */}
       
       <main className="pt-32 pb-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
