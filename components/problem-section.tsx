@@ -50,7 +50,7 @@ export function ProblemSection() {
             The Problem
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-5 tracking-tight">
-            Finance teams are stuck in <span className="text-red-400">Excel chaos.</span>
+            Stop fighting spreadsheets. Move to <span className="text-accent underline decoration-red-400">SOC 2 architecture ready</span> finance logic.
           </h2>
           <p className="text-base sm:text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">
             You can't run a modern company on brittle spreadsheets. The cost of one formula error or one delayed forecast is too high.

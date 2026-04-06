@@ -74,6 +74,7 @@ const navDialogs: Record<string, { title: string, desc: string, items: { icon: a
     title: "Built for Trust",
     desc: "Your data is encrypted, auditable, and under your control.",
     items: [
+      { icon: ShieldCheck, label: "SOC 2 Architecture Ready", desc: "Enterprise-grade security controls (Audit in progress)" },
       { icon: Lock, label: "AES-256 Encryption", desc: "Data encrypted at rest and in transit" },
       { icon: Shield, label: "GDPR Ready", desc: "European compliance architecture" },
       { icon: CheckCircle2, label: "Human Approval Gates", desc: "No AI output without your sign-off" },

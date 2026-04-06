@@ -85,7 +85,7 @@ export function HeroSection() {
 
           {/* SUBHEADLINE */}
           <p className="text-base sm:text-lg md:text-xl text-white/60 max-w-4xl mx-auto leading-relaxed mb-4">
-            FinaPilot helps finance teams rebuild their financial models, run forecasts and scenarios instantly, and generate board-ready reports — <span className="text-white font-semibold">with full audit traceability.</span>
+            Stop fighting brittle spreadsheets. FinaPilot helps finance teams rebuild their models with <span className="text-white font-semibold">SOC 2 architecture ready security</span>, run forecasts instantly, and generate board-ready reports — with full audit traceability.
           </p>
           <p className="text-sm sm:text-base text-accent font-semibold mb-10">
             We work with you to migrate your model in days, not months.
