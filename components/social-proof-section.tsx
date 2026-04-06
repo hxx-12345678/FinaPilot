@@ -1,44 +1,47 @@
 "use client"
 
-import { Building2, LineChart, Globe, Lock, ShieldCheck, FileCheck, CheckCircle2 } from "lucide-react"
+import { Building2, LineChart, Globe, Lock, ShieldCheck, FileCheck } from "lucide-react"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 
 const marketProof = [
   {
-    value: "$4.1B",
-    label: "Projected value of AI in global FP&A market by 2032.",
-    source: "Statista / Fortune Business Insights, 2024",
-    icon: LineChart
-  },
-  {
-    value: "54%",
-    label: "CFOs actively integrating Agentic AI for scenario forecasting.",
-    source: "Gartner Audit Research, 2024",
+    value: "80%",
+    label: "of finance functions plan to use AI.",
+    source: "Gartner Finance Research",
+    sourceUrl: "https://www.gartner.com/en/finance/topics/artificial-intelligence-in-finance",
     icon: Building2
   },
   {
-    value: "80%",
-    label: "Enterprise financial logic migrating to AI-Verified architectures.",
-    source: "McKinsey Global Institute",
+    value: "90%",
+    label: "of large spreadsheets contain errors.",
+    source: "EuSpRIG Research (Panko)",
+    sourceUrl: "https://eusprig.org/research-info/",
+    icon: LineChart
+  },
+  {
+    value: "73%",
+    label: "of US companies have adopted AI.",
+    source: "PwC AI Business Survey",
+    sourceUrl: "https://www.pwc.com/us/en/tech-effect/ai-analytics/ai-business-survey.html",
     icon: Globe
   }
 ]
 
-const credibilityPoints = [
+const trustPoints = [
   {
     icon: Lock,
-    title: "Validated Audit Architecture",
-    desc: "Rigorous third-party validation of security, availability, and processing integrity inside our isolated vault-tenant infrastructure."
+    title: "Your Data Stays Yours",
+    desc: "AES-256 encryption at rest, TLS 1.3 in transit. Isolated tenant architecture. We never train AI on your financial data."
   },
   {
     icon: ShieldCheck,
-    title: "Deterministic Engine",
-    desc: "Built entirely on exact mathematical DAGs (Directed Acyclic Graphs). Designed for zero financial hallucination."
+    title: "No AI Hallucinations",
+    desc: "Core calculations use deterministic math (not LLMs). AI assists with analysis — all financial logic is verifiable and traceable."
   },
   {
     icon: FileCheck,
-    title: "100% Audit Provenance",
-    desc: "Granular cryptographic logging of all logic steps, assumptions, and human overrides. Exceeds standard Big 4 audit readiness."
+    title: "Audit-Ready From Day 1",
+    desc: "Every assumption change, human override, and AI suggestion is logged. See who changed what, when, and why — built for SOC 2 readiness."
   }
 ]
 
@@ -46,65 +49,60 @@ export function SocialProofSection() {
   const { ref, isVisible } = useScrollReveal()
 
   return (
-    <section className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-[#0B0F19] relative section-divider overflow-hidden" ref={ref}>
-       <div className="absolute top-0 right-0 w-[60%] h-[60%] bg-accent/3 rounded-full blur-[120px] pointer-events-none" />
+    <section id="trust" className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-[#0B0F19] relative section-divider overflow-hidden" ref={ref}>
+       <div className="absolute top-0 right-0 w-[50%] h-[50%] bg-accent/3 rounded-full blur-[120px] pointer-events-none" />
 
        <div className="max-w-7xl mx-auto relative z-10">
           <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-premium border border-white/10 text-[10px] sm:text-[11px] font-black uppercase tracking-widest text-accent mb-6 bg-black/40">
-                Institutional Confidence
+             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs font-semibold text-accent mb-6">
+                <ShieldCheck className="w-3.5 h-3.5" />
+                Why Finance Teams Trust FinaPilot
              </div>
-             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-6 tracking-tight uppercase">
-                <span className="text-gradient-accent">Enterprise Grade</span> Protocol
+             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-5 tracking-tight">
+                Built for teams that can't afford <span className="text-gradient-accent">guesswork.</span>
              </h2>
-             <p className="text-sm sm:text-lg text-white/50 max-w-2xl mx-auto leading-relaxed font-medium">
-                Engineered for the high-stakes requirements of global finance operations, combining mathematical certainty with industrial security.
+             <p className="text-base sm:text-lg text-white/50 max-w-2xl mx-auto leading-relaxed">
+                The shift from spreadsheets to AI-powered finance is happening now. But only solutions that combine speed with full transparency will earn CFO trust.
              </p>
 
-             {/* Market Data Cards */}
-             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto mt-12 sm:mt-16">
+             {/* Market Data Cards with real sources */}
+             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 max-w-5xl mx-auto mt-12 sm:mt-14">
                 {marketProof.map((stat, i) => (
-                   <div 
-                     key={i} 
-                     className="glass-premium rounded-[2.5rem] p-8 sm:p-10 border border-white/5 relative overflow-hidden group hover:border-accent/30 transition-all bg-[#0a0f19] text-left shadow-2xl"
+                   <a 
+                     key={i}
+                     href={stat.sourceUrl}
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     className={`glass-premium rounded-2xl p-7 sm:p-8 border border-white/5 relative overflow-hidden group hover:border-accent/20 transition-all text-left block cursor-pointer ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                     style={{ transitionDelay: `${200 + i * 100}ms` }}
                    >
-                     <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-bl-full -z-10 group-hover:bg-accent/10 transition-colors" />
-                     <div className="w-12 h-12 glass-premium rounded-xl flex items-center justify-center mb-6 border border-white/10 bg-white/5 group-hover:scale-110 transition-transform">
-                        <stat.icon className="w-6 h-6 text-accent group-hover:text-white transition-colors" />
-                     </div>
-                     <div className="text-4xl sm:text-5xl font-black text-white mb-3 tracking-tighter leading-none group-hover:text-accent transition-colors">
+                     <stat.icon className="w-5 h-5 text-white/30 group-hover:text-accent transition-colors mb-4" />
+                     <div className="text-3xl sm:text-4xl font-black text-white mb-2 tracking-tight leading-none group-hover:text-accent transition-colors">
                         {stat.value}
                      </div>
-                     <p className="text-sm sm:text-base text-white/80 leading-snug font-bold mb-6 min-h-[40px]">
+                     <p className="text-sm text-white/60 leading-snug font-medium mb-5">
                        {stat.label}
                      </p>
-                     <div className="pt-6 border-t border-white/5 flex items-center justify-between">
-                        <span className="text-[9px] text-white/40 uppercase tracking-[0.2em] font-black font-mono">{stat.source}</span>
+                     <div className="pt-4 border-t border-white/5 flex items-center justify-between">
+                        <span className="text-[10px] text-white/30 font-medium">{stat.source}</span>
+                        <span className="text-[9px] text-accent/50 group-hover:text-accent transition-colors font-semibold uppercase tracking-wider">Read Report →</span>
                      </div>
-                   </div>
+                   </a>
                 ))}
              </div>
           </div>
 
-          {/* Credibility Grid */}
-          <div className={`grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12 max-w-5xl mx-auto mt-16 sm:mt-24 pt-16 border-t border-white/10 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.2s' }}>
-             {credibilityPoints.map((point, i) => (
-               <div key={i} className="flex flex-col items-center md:items-start text-center md:text-left px-4 group">
-                  <div className="w-14 h-14 glass-premium rounded-2xl flex items-center justify-center mb-6 border border-white/10 bg-black/40 group-hover:scale-110 transition-transform duration-500 shadow-xl">
-                    <point.icon className="w-7 h-7 text-accent" />
+          {/* Trust Grid */}
+          <div className={`grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 max-w-5xl mx-auto mt-16 sm:mt-20 pt-14 border-t border-white/5 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.4s' }}>
+             {trustPoints.map((point, i) => (
+               <div key={i} className="flex flex-col items-start text-left group">
+                  <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center mb-5 border border-white/10 group-hover:border-accent/20 transition-colors">
+                    <point.icon className="w-6 h-6 text-accent" />
                   </div>
-                  <h3 className="text-xl font-black text-white mb-3 leading-tight uppercase tracking-tight">{point.title}</h3>
-                  <p className="text-sm text-white/50 leading-relaxed font-medium group-hover:text-white/70 transition-colors">{point.desc}</p>
+                  <h3 className="text-lg font-bold text-white mb-2">{point.title}</h3>
+                  <p className="text-sm text-white/50 leading-relaxed">{point.desc}</p>
                </div>
              ))}
-          </div>
-          
-          <div className="mt-16 sm:mt-24 flex flex-col items-center gap-6">
-             <div className="h-px w-24 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-             <div className="glass-premium px-8 py-3 rounded-2xl border border-emerald-500/20 inline-flex items-center gap-4 bg-emerald-500/5 shadow-2xl group hover:border-emerald-500/40 transition-all">
-                 <CheckCircle2 className="w-5 h-5 text-emerald-400 animate-pulse" />
-                 <span className="text-[10px] sm:text-[11px] font-black text-white uppercase tracking-[0.3em]">Institutional Integrity Verified</span>
-             </div>
           </div>
        </div>
     </section>

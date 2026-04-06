@@ -1,24 +1,110 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
-import { Menu, X, Lock, Terminal, Database, Hammer, Cpu, Layout, Info, ArrowRight,
-  RefreshCw, CheckCircle2, AlertCircle, Sparkles, Trash2, ShieldCheck,
-  ChevronRight, BarChart3, Fingerprint, GitBranch, Terminal as Term,
-  Users
+import { Menu, X, ArrowRight,
+  Database, ShieldCheck, Cpu, GitBranch, BarChart3,
+  Users, Activity, Brain, FileSpreadsheet, TrendingUp, 
+  Zap, LineChart, Calculator, Bot, CheckCircle2,
+  Link2, Shield, Lock, Target, AlertTriangle, 
+  Clock, HelpCircle, Eye, Layers, LayoutDashboard,
+  PieChart, Network, Send, Fingerprint
 } from "lucide-react"
 import { useCalendly } from "@/components/calendly-provider"
+
+// ═══ HOVER DIALOG DATA ═══
+const navDialogs: Record<string, { title: string, desc: string, items: { icon: any, label: string, desc: string }[] }> = {
+  Problem: {
+    title: "Problems Finance Teams Face",
+    desc: "Research-backed pain points driving CFOs to modernize.",
+    items: [
+      { icon: AlertTriangle, label: "94% of Spreadsheets Contain Errors", desc: "Deloitte: material defects distort forecasts" },
+      { icon: Clock, label: "80% of Time Lost to Data Wrangling", desc: "Finance teams format instead of analyzing" },
+      { icon: HelpCircle, label: "70% of CFOs Still Rely on Excel", desc: "Despite known risks — no trusted alternative exists" },
+      { icon: Database, label: "Data Scattered Across 5+ Tools", desc: "ERPs, CRMs, spreadsheets — no single source of truth" },
+    ]
+  },
+  Platform: {
+    title: "Platform Capabilities",
+    desc: "Everything your finance team needs in one system.",
+    items: [
+      { icon: GitBranch, label: "Scenario Planning", desc: "Branch-based multi-track variant modeling" },
+      { icon: Zap, label: "Real-time What-IF", desc: "Instant impact analysis on P&L variables" },
+      { icon: TrendingUp, label: "Forecasting Engine", desc: "AI-driven predictive trajectory analysis" },
+      { icon: Layers, label: "Semantic Ledger", desc: "Unified schema for disparate ERP sources" },
+      { icon: ShieldCheck, label: "Audit-Grade Traceability", desc: "DAG-backed cell lineages (SOC 2 level)" },
+      { icon: Cpu, label: "Model Architecture", desc: "Atomic structure for infinite scalability" },
+      { icon: LayoutDashboard, label: "Investor Dashboards", desc: "Live, read-only board reporting portals" },
+      { icon: Calculator, label: "Financial Modeling", desc: "Professional DCF, SaaS, and LBO modeling" },
+      { icon: Activity, label: "Alerts Management", desc: "Autonomous variance & anomaly detection" },
+      { icon: BarChart3, label: "Monte Carlo Runway", desc: "Probabilistic cash survival projections" },
+      { icon: PieChart, label: "Budget vs Actual", desc: "Variance gap analysis with attribution" },
+      { icon: Users, label: "Resource Allocations", desc: "Headcount & CAPEX optimization logic" },
+    ]
+  },
+  Agents: {
+    title: "12 Autonomous AI Agents",
+    desc: "Specialized intelligence. Zero loss of control.",
+    items: [
+      { icon: Shield, label: "Risk & Compliance Agent", desc: "Stress-tests macro scenarios" },
+      { icon: LineChart, label: "Variance Analysis Agent", desc: "Explains plan vs. actuals" },
+      { icon: Calculator, label: "Financial Modeling Agent", desc: "Builds baseline models" },
+      { icon: Bot, label: "Reporting Agent", desc: "Auto-drafts board narratives" },
+      { icon: Activity, label: "Market Monitoring Agent", desc: "Watches macro indicators" },
+      { icon: Send, label: "Resource Allocation Agent", desc: "Optimizes headcount planning" },
+      { icon: Database, label: "Data Cleaning Agent", desc: "Normalizes messy ERP/CSV data" },
+      { icon: GitBranch, label: "Scenario Planning Agent", desc: "Runs Monte Carlo simulations" },
+      { icon: BarChart3, label: "Cash Flow Agent", desc: "Simulates daily runway dynamics" },
+      { icon: Zap, label: "Circular Logic Agent", desc: "Resolves complex debt loops" },
+      { icon: Fingerprint, label: "Audit & Provenance Agent", desc: "Logs every cell update" },
+      { icon: Brain, label: "Anomaly Detection Agent", desc: "Spots forecast deviations" },
+    ]
+  },
+  Integrations: {
+    title: "Connect Your Stack",
+    desc: "Works with your existing tools.",
+    items: [
+      { icon: FileSpreadsheet, label: "Excel & CSV", desc: "Upload any spreadsheet — Day 1 ready" },
+      { icon: Database, label: "QuickBooks / Xero / Zoho", desc: "Direct accounting sync" },
+      { icon: Link2, label: "Stripe / Razorpay", desc: "Revenue data pipeline" },
+      { icon: Network, label: "SAP / Oracle / Salesforce", desc: "Enterprise connectors (Design Partners)" },
+    ]
+  },
+  Trust: {
+    title: "Built for Trust",
+    desc: "Your data is encrypted, auditable, and under your control.",
+    items: [
+      { icon: Lock, label: "AES-256 Encryption", desc: "Data encrypted at rest and in transit" },
+      { icon: Shield, label: "GDPR Ready", desc: "European compliance architecture" },
+      { icon: CheckCircle2, label: "Human Approval Gates", desc: "No AI output without your sign-off" },
+    ]
+  },
+}
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [activeDialog, setActiveDialog] = useState<string | null>(null)
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null)
   const { openCalendly } = useCalendly()
+  
+  // Mobile accordion state
+  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null)
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  const handleMouseEnter = (item: string) => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current)
+    setActiveDialog(item)
+  }
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => setActiveDialog(null), 200)
+  }
 
   const FaviconLogo = ({ className }: { className?: string }) => (
     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
@@ -27,10 +113,6 @@ export function Header() {
           <stop offset="0%" style={{stopColor: "#2563EB"}}/>
           <stop offset="100%" style={{stopColor: "#0EA5E9"}}/>
         </linearGradient>
-        <linearGradient id="fpLogoGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" style={{stopColor: "#3B82F6"}}/>
-          <stop offset="100%" style={{stopColor: "#06B6D4"}}/>
-        </linearGradient>
       </defs>
       <rect width="32" height="32" rx="8" fill="url(#fpLogoGrad1)"/>
       <rect x="7" y="8" width="2.5" height="15" rx="1" fill="white" opacity="0.9"/>
@@ -38,57 +120,82 @@ export function Header() {
       <rect x="7" y="14.5" width="5" height="2.5" rx="1" fill="white" opacity="0.9"/>
       <rect x="16" y="8" width="2.5" height="15" rx="1" fill="white" opacity="0.9"/>
       <path d="M 16 8 L 21 8 Q 24 8 24 12 Q 24 16 21 16 L 16 16" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-      <circle cx="10" cy="5" r="1.5" fill="url(#fpLogoGrad2)" opacity="0.8"/>
-      <circle cx="24" cy="5" r="1.5" fill="url(#fpLogoGrad2)" opacity="0.8"/>
-      <circle cx="28" cy="12" r="1.5" fill="url(#fpLogoGrad2)" opacity="0.8"/>
-      <circle cx="28" cy="22" r="1.5" fill="url(#fpLogoGrad2)" opacity="0.8"/>
-      <path d="M 10 5 Q 16 3 24 5" stroke="url(#fpLogoGrad2)" strokeWidth="1" fill="none" opacity="0.6"/>
-      <path d="M 24 5 L 28 12" stroke="url(#fpLogoGrad2)" strokeWidth="1" fill="none" opacity="0.5"/>
-      <path d="M 12 23 Q 18 24 28 22" stroke="url(#fpLogoGrad2)" strokeWidth="1" fill="none" opacity="0.5"/>
-      <rect x="4" y="26" width="1.5" height="4" rx="0.75" fill="url(#fpLogoGrad2)" opacity="0.7"/>
-      <rect x="6.5" y="24" width="1.5" height="6" rx="0.75" fill="url(#fpLogoGrad2)" opacity="0.7"/>
-      <rect x="9" y="22" width="1.5" height="8" rx="0.75" fill="url(#fpLogoGrad2)" opacity="0.7"/>
     </svg>
   )
+
+  const navItems = ['Problem', 'Platform', 'Agents', 'Integrations', 'Trust']
+
+  const getHref = (item: string) => {
+    if (item === 'Trust') return '/trust'
+    return `#${item.toLowerCase()}`
+  }
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-[#0B0F19]/90 backdrop-blur-xl border-b border-white/10 shadow-lg shadow-black/20' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          <div className="flex items-center gap-4 group cursor-pointer" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
-             <div className="relative pointer-events-none scale-75 sm:scale-100 origin-left">
-                <div className="absolute inset-0 bg-accent/20 blur-md rounded-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                <FaviconLogo />
+        <div className="flex items-center justify-between h-18">
+          <div className="flex items-center gap-3 group cursor-pointer" onClick={() => window.location.href = '/'}>
+             <FaviconLogo />
+             <div className="flex flex-col">
+                 <span className="text-xl font-bold text-white tracking-tight leading-none group-hover:text-accent transition-colors">FinaPilot</span>
+                 <span className="text-[9px] font-semibold text-white/40 tracking-wider uppercase mt-0.5">Financial Intelligence</span>
              </div>
-            <div className="flex flex-col">
-                <span className="text-2xl font-black text-white tracking-tighter leading-none group-hover:text-accent transition-colors">FINAPILOT</span>
-                <span className="text-[10px] font-bold text-accent tracking-[0.25em] opacity-90 uppercase mt-0.5">The Finance OS</span>
-            </div>
           </div>
 
-          <nav className="hidden md:flex items-center gap-10">
-            {['Problem', 'Solution', 'Agents', 'Roles', 'Trust'].map((item) => (
-              <a 
+          <nav className="hidden md:flex items-center gap-1">
+            {navItems.map((item) => (
+              <div 
                 key={item} 
-                href={`#${item.toLowerCase()}`} 
-                className="text-xs font-black uppercase tracking-widest text-white/50 hover:text-white transition-all transform hover:translate-y-[-1px] active:translate-y-0"
+                className="relative"
+                onMouseEnter={() => handleMouseEnter(item)}
+                onMouseLeave={handleMouseLeave}
               >
-                {item}
-              </a>
+                <a 
+                  href={getHref(item)} 
+                  className={`px-3 py-2 text-xs font-semibold uppercase tracking-wider rounded-lg transition-all ${activeDialog === item ? 'text-white bg-white/5' : 'text-white/50 hover:text-white'}`}
+                >
+                  {item}
+                </a>
+
+                {/* Hover Dialog */}
+                {activeDialog === item && navDialogs[item] && (
+                  <div 
+                    className={`absolute top-full pt-3 z-50 ${['Platform', 'Agents'].includes(item) ? 'left-1/2 -translate-x-1/2 w-[720px]' : 'left-1/2 -translate-x-1/2 w-[360px]'}`}
+                    onMouseEnter={() => handleMouseEnter(item)}
+                    onMouseLeave={handleMouseLeave}
+                  >
+                    <div className="bg-[#0d1220] border border-white/10 rounded-2xl shadow-[0_30px_80px_rgba(0,0,0,0.8)] p-5 relative overflow-hidden">
+                      <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-bl-full pointer-events-none" />
+                      
+                      <h4 className="text-sm font-bold text-white mb-1">{navDialogs[item].title}</h4>
+                      <p className="text-[11px] text-white/40 mb-4 leading-relaxed">{navDialogs[item].desc}</p>
+                      
+                      <div className={`${['Platform'].includes(item) ? 'grid grid-cols-2 gap-x-6 gap-y-3' : item === 'Agents' ? 'grid grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-3' : 'space-y-3'}`}>
+                        {navDialogs[item].items.map((subItem, i) => (
+                          <div key={i} className="flex items-start gap-3 rounded-lg hover:bg-white/5 transition-colors cursor-pointer group/item p-1 -m-1">
+                            <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center shrink-0 border border-white/10 group-hover/item:border-accent/30 transition-colors">
+                              <subItem.icon className="w-4 h-4 text-white/50 group-hover/item:text-accent transition-colors" />
+                            </div>
+                            <div className="min-w-0">
+                              <p className="text-xs font-semibold text-white leading-tight">{subItem.label}</p>
+                              <p className="text-[10px] text-white/40 mt-0.5 leading-snug">{subItem.desc}</p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
             ))}
             
-            <div className="w-px h-6 bg-white/10 mx-2" />
-
-            <div className="flex items-center gap-3 px-4 py-2 rounded-xl bg-white/3 border border-white/10 group hover:border-accent/40 transition-all shadow-inner">
-               <Lock className="w-3.5 h-3.5 text-accent" />
-               <span className="text-[10px] font-black text-white uppercase tracking-tighter">Architecture Verified</span>
-            </div>
+            <div className="w-px h-5 bg-white/10 mx-3" />
 
             <Button 
               onClick={openCalendly}
-              className="bg-accent text-accent-foreground px-6 py-2 h-11 rounded-xl text-xs font-black uppercase tracking-widest hover:bg-accent/90 transition-all shadow-[0_0_20px_rgba(0,242,255,0.2)] hover:shadow-[0_0_30px_rgba(0,242,255,0.3)] hover:scale-[1.02]"
+              className="bg-accent text-accent-foreground px-5 py-2 h-9 rounded-lg text-xs font-bold hover:bg-accent/90 transition-all shadow-[0_0_15px_rgba(0,242,255,0.15)] hover:shadow-[0_0_25px_rgba(0,242,255,0.25)]"
             >
-              Book Institutional Demo
+              Apply to Become a Founding Partner
             </Button>
           </nav>
 
@@ -98,22 +205,46 @@ export function Header() {
         </div>
       </div>
 
+      {/* Mobile Menu with Accordion */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#0B0F19]/95 backdrop-blur-2xl border-b border-white/5 animate-fade-in">
-          <div className="px-4 pt-4 pb-8 space-y-3">
-            {['Problem', 'Solution', 'Agents', 'Roles', 'Trust'].map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="block px-4 py-3 text-sm font-black uppercase tracking-widest text-white/50 hover:text-white hover:bg-white/5 rounded-xl transition-all"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {item}
-              </a>
+        <div className="md:hidden bg-[#0B0F19]/95 backdrop-blur-2xl border-b border-white/5 overflow-y-auto max-h-[85vh]">
+          <div className="px-4 pt-4 pb-8 space-y-1">
+            {navItems.map((item) => (
+              <div key={item}>
+                <div 
+                  className="flex items-center justify-between px-4 py-3 rounded-xl transition-all cursor-pointer hover:bg-white/5"
+                  onClick={() => setMobileExpanded(mobileExpanded === item ? null : item)}
+                >
+                  <span className="text-sm font-semibold text-white/80">{item}</span>
+                  <div className="text-white/40">
+                    {mobileExpanded === item ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+                  </div>
+                </div>
+                
+                {/* Mobile Sub-menu */}
+                {mobileExpanded === item && navDialogs[item] && (
+                  <div className="pl-6 pr-4 py-3 mb-2 space-y-4 border-l border-white/10 ml-6">
+                    {navDialogs[item].items.map((subItem, i) => (
+                      <div key={i} className="flex items-start gap-3">
+                         <div className="w-6 h-6 rounded-md bg-white/5 flex items-center justify-center shrink-0 border border-white/10 mt-0.5">
+                            <subItem.icon className="w-3 h-3 text-accent" />
+                         </div>
+                         <div>
+                            <p className="text-xs font-semibold text-white leading-tight mb-0.5">{subItem.label}</p>
+                            <p className="text-[10px] text-white/50 leading-snug">{subItem.desc}</p>
+                         </div>
+                      </div>
+                    ))}
+                    <div className="pt-2">
+                       <a href={getHref(item)} className="text-[10px] uppercase tracking-wider font-bold text-accent" onClick={() => setMobileMenuOpen(false)}>Go to {item} →</a>
+                    </div>
+                  </div>
+                )}
+              </div>
             ))}
-            <div className="pt-4 px-4">
-               <Button onClick={openCalendly} className="w-full bg-accent text-accent-foreground h-14 rounded-xl font-bold uppercase tracking-widest text-xs">
-                 Book Institutional Demo
+            <div className="pt-6 px-4 pb-4">
+               <Button onClick={openCalendly} className="w-full bg-accent text-accent-foreground h-12 rounded-xl font-bold text-sm">
+                 Apply for Design Partner Program
                </Button>
             </div>
           </div>

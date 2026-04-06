@@ -1,93 +1,109 @@
 "use client"
 
-import { Database, Link2, ShieldCheck, FileSpreadsheet } from "lucide-react"
+import { Link2, ShieldCheck, FileSpreadsheet, Lock } from "lucide-react"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 
-const integrations = [
-  { name: "QuickBooks", icon: "📊", category: "Accounting", desc: "Pilot implementation support" },
-  { name: "Xero", icon: "📈", category: "Accounting", desc: "Custom ledger mapping" },
-  { name: "Zoho Books", icon: "📑", category: "Accounting", desc: "Architecture roadmap" },
-  { name: "Stripe", icon: "💵", category: "Payments", desc: "Custom intake pipeline" },
-  { name: "Razorpay", icon: "💳", category: "Payments", desc: "Custom intake pipeline" },
-  { name: "Plaid", icon: "🏦", category: "Banking", desc: "Connector in co-build" },
-  { name: "SAP S/4HANA", icon: "🏢", category: "ERP", desc: "Enterprise mapping lab" },
-  { name: "Oracle Cloud", icon: "🔶", category: "ERP", desc: "Enterprise mapping lab" },
-  { name: "Salesforce", icon: "☁️", category: "CRM", desc: "Pipeline mapping support" },
-  { name: "Slack", icon: "💬", category: "Alerts", desc: "Custom alert ingestion" },
-  { name: "Asana", icon: "✅", category: "Workflow", desc: "Governance pilot feature" },
-  { name: "ClearTax", icon: "📋", category: "Compliance", desc: "Audit architecture draft" },
+const seamlessSync = [
+  { name: "Excel (.XLSX)", icon: "📊", status: "live" },
+  { name: "CSV Bulk Upload", icon: "📄", status: "live" },
 ]
 
-const categories = [
-  { label: "Accounting", color: "text-blue-400", bg: "bg-blue-500/10" },
-  { label: "Payments", color: "text-green-400", bg: "bg-green-500/10" },
-  { label: "Banking", color: "text-cyan-400", bg: "bg-cyan-500/10" },
-  { label: "ERP", color: "text-purple-400", bg: "bg-purple-500/10" },
-  { label: "CRM", color: "text-orange-400", bg: "bg-orange-500/10" },
-  { label: "Alerts", color: "text-pink-400", bg: "bg-pink-500/10" },
+const designPartnerIntegrations = [
+  { name: "SAP S/4HANA", icon: "🏢" },
+  { name: "Oracle Financials", icon: "🔶" },
+  { name: "QuickBooks Online", icon: "📈" },
+  { name: "Xero", icon: "📑" },
+  { name: "Zoho Books", icon: "📒" },
+  { name: "Stripe", icon: "💵" },
+  { name: "Razorpay", icon: "💳" },
+  { name: "Plaid", icon: "🏦" },
+  { name: "ClearTax", icon: "📋" },
+  { name: "Asana", icon: "✅" },
+  { name: "Salesforce", icon: "☁️" },
+  { name: "Slack", icon: "💬" },
 ]
 
 export function IntegrationsSection() {
   const { ref, isVisible } = useScrollReveal()
 
   return (
-    <section className="py-28 px-4 sm:px-6 lg:px-8 bg-[#0B0F19] relative overflow-hidden section-divider" ref={ref}>
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/3 rounded-full blur-[100px] pointer-events-none" />
-
+    <section id="integrations" className="py-24 sm:py-28 px-4 sm:px-6 lg:px-8 bg-[#0B0F19] relative overflow-hidden section-divider" ref={ref}>
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-premium text-[10px] font-bold uppercase tracking-widest text-accent mb-6">
-            <Link2 className="w-3 h-3" />
-            Secure Data Ingestion
+        <div className={`text-center mb-14 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs font-semibold text-accent mb-6">
+            <Link2 className="w-3.5 h-3.5" />
+            Integrations
           </div>
-          <h2 className="text-3xl sm:text-5xl font-bold text-white mb-6">
-            <span className="text-gradient-accent">Ingestion Architecture</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-5 tracking-tight">
+            Works with your <span className="text-gradient-accent">existing tools.</span>
           </h2>
-          <p className="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
-            FinaPilot's architecture is engineered for high-integrity ingestion from your most critical ledgers. During our pilot phase, we co-build custom connectors for your specific ERP structure.
+          <p className="text-base sm:text-lg text-white/50 max-w-2xl mx-auto leading-relaxed">
+            Start with Excel and CSV uploads on day one. Native ERP and accounting connectors roll out directly to verified Design Partners.
           </p>
         </div>
 
-        {/* Category pills */}
-        <div className={`flex flex-wrap justify-center gap-2 mb-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.2s' }}>
-          {categories.map((cat, i) => (
-            <div key={i} className={`px-3 py-1.5 rounded-full ${cat.bg} border border-white/10 text-[10px] font-bold uppercase tracking-widest ${cat.color}`}>
-              {cat.label}
-            </div>
-          ))}
+        {/* ═══ SEAMLESS SYNC — Day 1 Ready ═══ */}
+        <div className={`max-w-4xl mx-auto mb-10 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.1s' }}>
+          <div className="flex items-center gap-3 mb-5">
+            <div className="w-2 h-2 rounded-full bg-emerald-400" />
+            <h3 className="text-sm font-bold text-white uppercase tracking-wider">Seamless Sync — Available Now</h3>
+          </div>
+          <div className="grid grid-cols-2 gap-3 max-w-lg mx-auto">
+            {seamlessSync.map((item, i) => (
+              <div
+                key={i}
+                className="glass-premium rounded-2xl p-5 sm:p-6 border border-emerald-500/15 text-center group hover:border-emerald-500/30 transition-all"
+              >
+                <div className="text-2xl sm:text-3xl mb-2.5 group-hover:scale-110 transition-transform">{item.icon}</div>
+                <p className="text-xs font-bold text-white mb-1.5 leading-tight">{item.name}</p>
+                <div className="px-2 py-0.5 rounded text-[8px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-400/10 border border-emerald-400/20 inline-block">
+                  Live
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Integration grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4">
-          {integrations.map((integration, i) => (
-            <div
-              key={i}
-              className={`glass-premium glass-hover rounded-2xl p-4 sm:p-5 border border-white/10 text-center group transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-              style={{ transitionDelay: `${200 + i * 50}ms` }}
-            >
-              <div className="text-3xl sm:text-4xl mb-3 group-hover:scale-110 transition-transform">{integration.icon}</div>
-              <p className="text-xs font-bold text-white mb-1 leading-tight">{integration.name}</p>
-              <p className="text-[9px] text-accent/80 font-bold uppercase tracking-wider mb-2">{integration.category}</p>
-              <p className="text-[9px] text-white/60 leading-tight hidden sm:block">{integration.desc}</p>
+        {/* ═══ DESIGN PARTNERS ONLY ═══ */}
+        <div className={`max-w-4xl mx-auto transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.3s' }}>
+          <div className="glass-premium rounded-2xl p-6 sm:p-8 border border-white/5">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="px-2.5 py-1 rounded-lg text-[9px] font-bold uppercase tracking-wider text-accent bg-accent/10 border border-accent/20">
+                Design Partners Only
+              </div>
             </div>
-          ))}
+            <p className="text-sm text-white/50 leading-relaxed mb-6 max-w-2xl">
+              FinaPilot utilizes SOC 2 encrypted pipeline infrastructure to securely mirror ERP ledgers. We are currently rolling out native sync capabilities directly to verified Design Partners.
+            </p>
+            
+            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3">
+              {designPartnerIntegrations.map((item, i) => (
+                <div
+                  key={i}
+                  className={`glass-premium rounded-xl p-3 sm:p-4 border border-white/5 text-center group hover:border-accent/15 transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                  style={{ transitionDelay: `${400 + i * 30}ms` }}
+                >
+                  <div className="text-xl sm:text-2xl mb-1.5 group-hover:scale-110 transition-transform">{item.icon}</div>
+                  <p className="text-[10px] font-semibold text-white/70 leading-tight">{item.name}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* Bottom note */}
-        <div className={`mt-14 max-w-2xl mx-auto text-center transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.8s' }}>
-          <div className="glass-premium rounded-2xl p-6 border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-4">
-              <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
-                 <FileSpreadsheet className="w-5 h-5 text-accent" />
-              </div>
+        <div className={`mt-10 max-w-2xl mx-auto text-center transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.6s' }}>
+          <div className="glass-premium rounded-xl p-5 border border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <FileSpreadsheet className="w-5 h-5 text-accent shrink-0" />
               <div className="text-left">
-                 <p className="text-sm font-bold text-white">Universal Data Intake</p>
-                 <p className="text-xs text-white/60 mt-1">Full support for mapped CSV/Excel uploads from Day 1.</p>
+                 <p className="text-sm font-semibold text-white">Universal Data Intake</p>
+                 <p className="text-xs text-white/40 mt-0.5">Full support for mapped Excel/CSV uploads from Day 1.</p>
               </div>
             </div>
-            <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/40 border border-white/5">
-               <ShieldCheck className="w-4 h-4 text-green-400" />
-               <span className="text-[10px] font-bold text-white uppercase tracking-widest">Encrypted Pipeline</span>
+            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 border border-white/5">
+               <Lock className="w-3.5 h-3.5 text-emerald-400" />
+               <span className="text-[10px] font-semibold text-white/60 uppercase tracking-wider">SOC 2 Encrypted Pipeline</span>
             </div>
           </div>
         </div>

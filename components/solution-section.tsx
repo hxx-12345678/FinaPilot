@@ -1,104 +1,117 @@
 "use client"
 
-import { Cpu, ShieldCheck, Database, GitBranch, Terminal, RefreshCw, Zap, Workflow, Search } from "lucide-react"
+import { Cpu, ShieldCheck, Database, GitBranch, RefreshCw, Zap, Search, CheckCircle2, BarChart3, TrendingUp, Layers, LayoutDashboard, Calculator, Activity, PieChart, Users } from "lucide-react"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 
-const features = [
-  { icon: Cpu, label: "Vectorized Compute", desc: "No cell-level lag." },
-  { icon: ShieldCheck, label: "Deterministic Engine", desc: "100% mathematical rules." },
-  { icon: Database, label: "Centralized Data", desc: "No more broken links." },
-  { icon: GitBranch, label: "Version Control", desc: "Roll back any model." },
-  { icon: Terminal, label: "Py/SymPy Support", desc: "Advanced quant scripting." },
-  { icon: RefreshCw, label: "Real-time Recalc", desc: "4ms global updates." },
-  { icon: Zap, label: "Smart Anomalies", desc: "Shapley variance ID." },
-  { icon: Workflow, label: "Approval Gates", desc: "CFO sign-off required." },
-  { icon: Search, label: "Cell-level Audit", desc: "Who changed what." },
+const featureCategories = [
+  {
+    category: "Modeling & Simulation",
+    features: [
+      { icon: GitBranch, label: "Scenario Planning", desc: "Branch-based multi-track variant modeling." },
+      { icon: Zap, label: "Real-time What-IF", desc: "Instant impact analysis on P&L variables." },
+      { icon: TrendingUp, label: "Forecasting Engine", desc: "AI-driven predictive trajectory analysis." },
+    ]
+  },
+  {
+    category: "Governance & Trust",
+    features: [
+      { icon: Layers, label: "Semantic Ledger", desc: "Unified schema for disparate ERP sources." },
+      { icon: ShieldCheck, label: "Audit-Grade Traceability", desc: "DAG-backed cell lineages (SOC 2 level)." },
+      { icon: Cpu, label: "Model Architecture", desc: "Atomic structure for infinite scalability." },
+    ]
+  },
+  {
+    category: "Board & Investors",
+    features: [
+      { icon: LayoutDashboard, label: "Investor Dashboards", desc: "Live, read-only board reporting portals." },
+      { icon: Calculator, label: "Financial Modeling", desc: "Professional DCF, SaaS, and LBO modeling." },
+      { icon: Activity, label: "Alerts Management", desc: "Autonomous variance & anomaly detection." },
+    ]
+  },
+  {
+    category: "Strategic Direction",
+    features: [
+      { icon: BarChart3, label: "Monte Carlo Runway", desc: "Probabilistic cash survival projections." },
+      { icon: PieChart, label: "Budget vs Actual", desc: "Variance gap analysis with attribution." },
+      { icon: Users, label: "Resource Allocations", desc: "Headcount & CAPEX optimization logic." },
+    ]
+  },
+]
+
+const outcomes = [
+  "Build clean 3-statement models (P&L, Balance Sheet, Cash Flow)",
+  "Run 10,000+ Monte Carlo scenarios in under 4 seconds",
+  "Track every assumption, change, and override automatically",
+  "Generate board-ready reports and variance narratives",
+  "Resolve circular references (interest/debt loops) without breaking",
+  "AI assists analysis — but humans approve every output",
 ]
 
 export function SolutionSection() {
   const { ref, isVisible } = useScrollReveal()
 
   return (
-    <section id="solution" className="py-28 px-4 sm:px-6 lg:px-8 bg-[#0B0F19] relative section-divider" ref={ref}>
-      <div className="absolute top-1/3 left-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
+    <section id="solution" className="py-24 sm:py-28 px-4 sm:px-6 lg:px-8 bg-[#0B0F19] relative section-divider" ref={ref}>
+      <div className="absolute top-1/3 left-0 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-20">
-          <div className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 glass-premium text-[10px] font-bold uppercase tracking-widest text-accent mb-6 animate-pulse-glow transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <Cpu className="w-3 h-3 text-accent" />
-            Vectorized Architecture
+        <div className="text-center mb-14">
+          <div className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs font-semibold text-accent mb-6 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <Cpu className="w-3.5 h-3.5 text-accent" />
+            The Platform
+          </div>
+          <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight leading-tight transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            FinaPilot replaces spreadsheets with <span className="text-gradient-accent">structured financial models.</span>
+          </h2>
+          <p className={`text-base sm:text-lg text-white/50 max-w-3xl mx-auto leading-relaxed transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            No broken formulas. No black box AI. Just clean, auditable financial logic — powered by 12 AI agents under your full control.
+          </p>
+        </div>
+
+        {/* Outcome checklist */}
+        <div className={`max-w-3xl mx-auto mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className="grid sm:grid-cols-2 gap-3">
+            {outcomes.map((outcome, i) => (
+              <div key={i} className="flex items-start gap-2.5">
+                <CheckCircle2 className="w-4 h-4 text-accent shrink-0 mt-0.5" />
+                <span className="text-sm text-white/60 font-medium leading-relaxed">{outcome}</span>
+              </div>
+            ))}
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-20">
-          <div className={`flex-1 transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
-            <h2 className="text-3xl sm:text-5xl font-bold text-white mb-4 tracking-tight">
-              The <span className="text-gradient-accent">Hyperblock™</span> Advantage
-            </h2>
-            <p className="text-xl text-accent font-semibold mb-4 tracking-wide">
-              The Operating System for Finance Professionals
-            </p>
-            <p className="text-base text-white/70 leading-relaxed mb-10">
-              Stop fighting with cell-based limitations. FinaPilot's vectorized DAG engine processes multi-dimensional models with industrial speed, ensuring your 3-statement logic remains unbreakable across 10,000+ scenarios.
-            </p>
-
-            <div className="grid grid-cols-3 gap-3">
-              {features.map((feature, index) => (
-                <div
-                  key={index}
-                  className={`flex flex-col items-center text-center p-3 sm:p-4 rounded-xl glass-premium glass-hover border border-white/5 group transition-all duration-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
-                  style={{ transitionDelay: `${300 + index * 60}ms` }}
-                >
-                  <feature.icon className="w-5 h-5 text-accent mb-2 group-hover:scale-110 transition-transform" />
-                  <span className="text-[9px] sm:text-[10px] uppercase font-bold tracking-widest text-white/80 group-hover:text-white transition-colors leading-tight">{feature.label}</span>
-                  <span className="text-[8px] text-white/50 mt-1 hidden sm:block leading-tight">{feature.desc}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className={`flex-1 w-full relative transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`} style={{ transitionDelay: '0.3s' }}>
-            {/* Visual Representation of the OS */}
-            <div className="glass-premium rounded-[2rem] p-2 sm:p-3 border border-accent/20 relative shadow-2xl bg-[#0d121c]">
-               <div className="absolute inset-0 bg-gradient-to-tr from-accent/10 via-transparent to-blue-500/10 rounded-[2rem] opacity-50" />
-               <div className="bg-black/60 rounded-[1.5rem] border border-white/5 overflow-hidden relative z-10 w-full aspect-[4/3] sm:aspect-[16/10] flex flex-col">
-                  {/* Mock Terminal Header */}
-                  <div className="h-10 sm:h-12 border-b border-white/5 bg-white/[0.02] flex items-center px-4 justify-between">
-                     <div className="flex items-center gap-2">
-                        <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                        <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                        <div className="w-3 h-3 rounded-full bg-green-500/80" />
-                     </div>
-                     <div className="flex items-center gap-2 text-[10px] text-white/40 font-mono tracking-wider">
-                        <Terminal className="w-3 h-3" />
-                        node: finapilot-compute-01
-                     </div>
-                  </div>
-                  
-                  {/* Mock Terminal Body */}
-                  <div className="flex-1 p-4 sm:p-6 font-mono text-[10px] sm:text-xs leading-relaxed overflow-hidden relative text-white/50">
-                    <div className="absolute top-0 right-0 p-4 opacity-10 blur-[1px]">
-                       <ShieldCheck className="w-32 h-32 text-accent" />
+        {/* Feature Categories Grid */}
+        <div className="grid md:grid-cols-2 gap-6">
+          {featureCategories.map((cat, catIdx) => (
+            <div 
+              key={catIdx} 
+              className={`glass-premium rounded-2xl p-6 sm:p-7 border border-white/5 transition-all duration-700 hover:border-accent/15 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              style={{ transitionDelay: `${200 + catIdx * 100}ms` }}
+            >
+              <h3 className="text-xs font-bold text-accent uppercase tracking-wider mb-5">{cat.category}</h3>
+              <div className="space-y-4">
+                {cat.features.map((feature, fIdx) => (
+                  <div key={fIdx} className="flex items-start gap-3 group">
+                    <div className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center shrink-0 border border-white/10 group-hover:border-accent/20 transition-colors">
+                      <feature.icon className="w-4 h-4 text-white/40 group-hover:text-accent transition-colors" />
                     </div>
-                    
-                    <p className="text-accent/80 mb-4">$ finapilot connect --source erp --target datalake</p>
-                    <p className="text-green-400 mb-2">» Establishing AES-256 secure tunnel... [OK]</p>
-                    <p className="mb-4">» Ingesting 2.4M ledger entries... [14ms]</p>
-                    
-                    <p className="text-accent/80 mt-6 mb-4">$ hyperblock compile --model "FY25_Scenario_A"</p>
-                    <p className="text-white/70 mb-1">Building Directed Acyclic Graph (DAG)...</p>
-                    <p className="text-green-400 mb-1">» Resolved 4,302 circular references (Interest/Debt loop) via SymPy.</p>
-                    <p className="mb-4 text-white/70">» Verifying constraints: Leverage Ratio &lt; 3.0x [PASS]</p>
-
-                    <p className="text-accent/80 mt-6 mb-4">$ auth require --role CFO --action "deploy_model"</p>
-                    <p className="text-yellow-400 mb-2 animate-pulse">» Pending Human-in-the-Loop authorization...</p>
+                    <div>
+                      <p className="text-sm font-semibold text-white leading-tight">{feature.label}</p>
+                      <p className="text-xs text-white/40 mt-0.5 leading-snug">{feature.desc}</p>
+                    </div>
                   </div>
-               </div>
+                ))}
+              </div>
             </div>
-            
-            {/* Glowing effect behind the mockup */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-accent/20 blur-[80px] -z-10 rounded-full" />
-          </div>
+          ))}
+        </div>
+
+        {/* Trust signal */}
+        <div className={`mt-8 p-5 rounded-xl glass-premium border border-accent/15 flex flex-col sm:flex-row items-center gap-4 max-w-4xl mx-auto transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.6s' }}>
+          <ShieldCheck className="w-6 h-6 text-accent shrink-0" />
+          <p className="text-sm text-white/60 leading-relaxed text-center sm:text-left">
+            <span className="text-white font-semibold">Human-in-the-loop by design.</span> AI agents suggest forecasts and flag anomalies, but every financial output requires human approval before it goes anywhere.
+          </p>
         </div>
       </div>
     </section>

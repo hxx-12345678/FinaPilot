@@ -14,7 +14,7 @@ const roles = [
     icon: Shield,
     label: "CFO",
     title: "Strategic Risk & Capital Efficiency",
-    benefit: "Institutional Risk Guardrails",
+    benefit: "Reduce Model Risk",
     points: [
       { icon: Shield, text: "Monte Carlo VaR analysis across 10,000+ scenario paths — reviewed and validated by your team" },
       { icon: Zap, text: "Real-time impact of 50bps rate hikes across all debt covenants — with full audit trail" },
@@ -55,15 +55,15 @@ const roles = [
     id: "fpa",
     icon: BarChart3,
     label: "FP&A Head",
-    title: "Industrial-Grade Accuracy",
-    benefit: "Vectorized Modeling Infrastructure",
+    title: "Speed & Accuracy",
+    benefit: "Built for FP&A Teams",
     points: [
-      { icon: BarChart3, text: "Hyperblock™ engine handles 1M+ row models — formulas remain human-readable via SymPy" },
-      { icon: Clock, text: "Incremental recalculation in <4ms — even across multi-sheet 3-statement models with full provenance" },
-      { icon: Zap, text: "Shapley-based variance attribution: mathematically explains WHY forecasts diverge — no black boxes" },
+      { icon: BarChart3, text: "Handle 1M+ row models with structured logic — every formula readable and auditable" },
+      { icon: Clock, text: "Full model recalculation in under 4ms — even across multi-sheet 3-statement models" },
+      { icon: Zap, text: "Mathematical variance attribution explains exactly WHY forecasts diverge — no black boxes" },
     ],
     roi: "85% Less Time on Data Prep",
-    painPoint: "We finally stopped wrestling with Excel and started analyzing. Shapley attribution answers 'Why did we miss?' with mathematical proof, not guesswork.",
+    painPoint: "We finally stopped wrestling with Excel and started analyzing. Variance attribution answers 'Why did we miss?' with mathematical proof, not guesswork.",
     mockupLabel: "Variance Attribution",
     mockupCode: "variance.explain(actual_vs_forecast, method='shapley')",
     mockupResult: "Top Driver: CAC +18% → Revenue Impact: -$340K",
@@ -163,7 +163,7 @@ export function RoleDeepDive() {
                             <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
                             <span className="text-xl sm:text-2xl font-bold text-white">{role.roi}</span>
                         </div>
-                        <p className="text-[10px] text-white/40 mt-2 uppercase tracking-widest font-bold">Documented Institutional Impact</p>
+                        <p className="text-[10px] text-white/40 mt-2 uppercase tracking-widest font-bold">Expected Outcome</p>
                     </div>
                   </div>
 

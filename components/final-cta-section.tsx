@@ -1,7 +1,7 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Lock, Zap, Shield, Brain, UserCheck } from "lucide-react"
+import { ArrowRight, Shield, Zap, Brain, CheckCircle2 } from "lucide-react"
 import { useCalendly } from "@/components/calendly-provider"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 
@@ -10,52 +10,42 @@ export function FinalCTASection() {
   const { ref, isVisible } = useScrollReveal()
 
   return (
-    <section className="py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden" ref={ref}>
-      {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-accent via-emerald-800 to-teal-950" />
-      <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-96 h-96 bg-white/10 rounded-full blur-[100px]" />
-      <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/4 w-96 h-96 bg-black/40 rounded-full blur-[100px]" />
-      {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.2) 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
+    <section className="py-24 sm:py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden" ref={ref}>
+      <div className="absolute inset-0 bg-gradient-to-br from-accent/90 via-emerald-700 to-teal-900" />
+      <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
 
-      <div className={`max-w-4xl mx-auto text-center relative z-10 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/30 border border-black/20 text-xs font-bold uppercase tracking-widest text-white/90 mb-6 backdrop-blur-sm">
-          <Lock className="w-3 h-3 text-white" /> 
-          Exclusive Enterprise Rollout
-        </div>
-        
-        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6 leading-[1.1] tracking-tight drop-shadow-lg">
-           Take Control of the <br /> New Standard in Finance.
+      <div className={`max-w-3xl mx-auto text-center relative z-10 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5 leading-tight tracking-tight">
+           Stop fighting spreadsheets.<br />Start building with confidence.
         </h2>
-        <p className="text-lg sm:text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
-          Deploy the Hyperblock™ engine. Eradicate spreadsheet fragility. Maintain total human governance. Secure your spot in the FinaPilot Enterprise Pilot today.
+        <p className="text-base sm:text-lg text-white/80 mb-8 max-w-2xl mx-auto leading-relaxed">
+          We're looking for 10 finance teams who are ready to replace brittle Excel models and supercharge their existing workflows with 12 specialized AI agents — all under full human control. If that's you, let's talk.
         </p>
 
-        {/* Trust badges */}
-        <div className="flex flex-wrap items-center justify-center gap-4 mb-10">
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
           {[
-            { icon: Shield, label: "Advanced Security & GDPR" },
-            { icon: UserCheck, label: "Total Human Oversight" },
-            { icon: Brain, label: "Mathematical AI" },
-            { icon: Zap, label: "<4ms Recalc" },
+            { icon: Shield, label: "Encrypted & GDPR Ready" },
+            { icon: CheckCircle2, label: "Human Approval Required" },
+            { icon: Brain, label: "12 AI Agents" },
+            { icon: Zap, label: "Instant Recalculation" },
           ].map((badge, i) => (
-            <div key={i} className="flex items-center gap-2 px-4 py-2 rounded-full bg-black/20 border border-white/10 backdrop-blur-md">
-              <badge.icon className="w-4 h-4 text-white" />
-              <span className="text-[10px] font-bold text-white uppercase tracking-widest">{badge.label}</span>
+            <div key={i} className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/15 border border-white/10 backdrop-blur-sm">
+              <badge.icon className="w-3.5 h-3.5 text-white/80" />
+              <span className="text-[10px] font-semibold text-white uppercase tracking-wider">{badge.label}</span>
             </div>
           ))}
         </div>
         
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-3">
             <Button
               size="lg"
-              className="bg-white text-emerald-950 hover:bg-gray-100 px-12 h-16 text-lg sm:text-xl font-bold shadow-2xl rounded-xl group"
+              className="bg-white text-emerald-900 hover:bg-gray-100 px-10 h-14 text-base font-bold shadow-2xl rounded-xl group"
               onClick={openCalendly}
             >
-                Start Your Enterprise Pilot
-                <ArrowRight className="ml-2 w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-1 transition-transform" />
+                Apply for Design Partner Program
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <p className="text-xs text-white/80 font-bold tracking-wider uppercase mt-2 drop-shadow-md">Requires Board / CFO Approval · Paid Pilot Engagement</p>
+            <p className="text-xs text-white/60 font-medium mt-1">30 min intro call · 10 spots available</p>
         </div>
       </div>
     </section>

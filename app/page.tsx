@@ -29,7 +29,7 @@ export default function Home() {
       {/* 3. Problem — Pain Agitation: Show the problems they face */}
       <ProblemSection />
 
-      {/* 4. Solution — The Answer: Hyperblock™ engine & technical edge */}
+      {/* 4. Solution — The Answer: Structured logic & AI assisted */}
       <SolutionSection />
 
 

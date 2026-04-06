@@ -1,171 +1,158 @@
 "use client"
 
-import { Bot, LineChart, Shield, Lock, Calculator, PieChart, Activity, UserCog, CheckCircle, Fingerprint, Database, Hammer, Send, Zap, GitBranch, BarChart3 } from "lucide-react"
+import { Bot, LineChart, Shield, Lock, Calculator, Activity, Send, Zap, GitBranch, BarChart3, Fingerprint, Database, CheckCircle, Brain, UserCog } from "lucide-react"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 
 const agents = [
   {
     icon: Shield,
     title: "Risk & Compliance Agent",
-    desc: "Stress-tests models against 10,000+ macroeconomic shocks based on current ledger topology.",
-    status: "Stress-Testing: Active",
-    statusColor: "text-red-400 bg-red-400/10 border-red-400/20",
-    gradient: "from-red-500/10 via-transparent to-transparent"
+    desc: "Stress-tests your model against macroeconomic scenarios. Flags exposure before it becomes a problem.",
+    status: "Active",
+    statusColor: "text-emerald-400 bg-emerald-400/10 border-emerald-400/20",
   },
   {
     icon: LineChart,
-    title: "Variance & Forensic Agent",
-    desc: "Provides mathematical Shapley attribution for plan vs actuals. Absolute audit transparency.",
-    status: "Attribution: Complete",
-    statusColor: "text-accent bg-accent/10 border-accent/20",
-    gradient: "from-accent/10 via-transparent to-transparent"
+    title: "Variance Analysis Agent",
+    desc: "Shows exactly why numbers changed between plan and actual — with mathematical attribution.",
+    status: "Active",
+    statusColor: "text-emerald-400 bg-emerald-400/10 border-emerald-400/20",
   },
   {
     icon: Calculator,
-    title: "Strategic Modeling Agent",
-    desc: "Builds baseline 3-statement models and M&A impact paths for CFO review and signing.",
-    status: "Baseline: Pending CFO",
-    statusColor: "text-blue-400 bg-blue-400/10 border-blue-400/20",
-    gradient: "from-blue-500/10 via-transparent to-transparent"
+    title: "Financial Modeling Agent",
+    desc: "Builds baseline 3-statement models and scenario variants. Drafts — your team approves.",
+    status: "Active",
+    statusColor: "text-emerald-400 bg-emerald-400/10 border-emerald-400/20",
   },
   {
     icon: Bot,
     title: "Reporting Agent",
-    desc: "Drafts automated Board decks and variance narratives. Requires human governance sign-off.",
-    status: "Drafting Deck",
-    statusColor: "text-purple-400 bg-purple-400/10 border-purple-400/20",
-    gradient: "from-purple-500/10 via-transparent to-transparent"
+    desc: "Auto-drafts variance narratives and board presentations from raw data.",
+    status: "Active",
+    statusColor: "text-emerald-400 bg-emerald-400/10 border-emerald-400/20",
   },
   {
     icon: Activity,
-    title: "Regime Detection Agent",
-    desc: "Monitors real-time API feeds to alert you of structural macroeconomic shifts in the market.",
-    status: "Monitoring API",
-    statusColor: "text-emerald-400 bg-emerald-400/10 border-emerald-400/20",
-    gradient: "from-emerald-500/10 via-transparent to-transparent"
+    title: "Market Monitoring Agent",
+    desc: "Watches macroeconomic indicators and alerts you when market shifts could impact forecasts.",
+    status: "Monitoring",
+    statusColor: "text-blue-400 bg-blue-400/10 border-blue-400/20",
   },
   {
     icon: Send,
-    title: "Allocation Agent",
-    desc: "Proposes optimal capital sweeps and resource allocation based on your current constraints.",
-    status: "Optimizing Capital",
-    statusColor: "text-orange-400 bg-orange-400/10 border-orange-400/20",
-    gradient: "from-orange-500/10 via-transparent to-transparent"
+    title: "Resource Allocation Agent",
+    desc: "Suggests optimal capital allocation and headcount planning based on constraints.",
+    status: "Active",
+    statusColor: "text-emerald-400 bg-emerald-400/10 border-emerald-400/20",
   },
   {
     icon: Database,
-    title: "Dataset Cleaning Agent",
-    desc: "Automatically maps and sanitizes fragmented ERP data into the Hyperblock format.",
-    status: "Dataset Ready",
-    statusColor: "text-cyan-400 bg-cyan-400/10 border-cyan-400/20",
-    gradient: "from-cyan-500/10 via-transparent to-transparent"
+    title: "Data Cleaning Agent",
+    desc: "Automatically maps and normalizes messy data from different ERPs and CSVs.",
+    status: "Ready",
+    statusColor: "text-accent bg-accent/10 border-accent/20",
   },
   {
     icon: GitBranch,
-    title: "Tax & Jurisdictional Agent",
-    desc: "Monitors liability exposure and tax optimization paths across global jurisdictions.",
-    status: "Tax Pathing: Active",
-    statusColor: "text-emerald-500 bg-emerald-500/10 border-emerald-500/20",
-    gradient: "from-emerald-600/10 via-transparent to-transparent"
-  },
-  {
-    icon: Hammer,
-    title: "Audit Readiness Agent",
-    desc: "Maintains models in 'external auditor ready' state 24/7 with full provenance matching.",
-    status: "Audit State: VALID",
-    statusColor: "text-white bg-white/5 border-white/10",
-    gradient: "from-white/10 via-transparent to-transparent"
+    title: "Scenario Planning Agent",
+    desc: "Runs Monte Carlo simulations across thousands of paths to show outcomes.",
+    status: "Active",
+    statusColor: "text-emerald-400 bg-emerald-400/10 border-emerald-400/20",
   },
   {
     icon: BarChart3,
-    title: "Cash Flow Predictor Agent",
-    desc: "Simulates daily runway, burn dynamics, and liquidity drift across 10,000 paths.",
-    status: "Liquidity Secured",
-    statusColor: "text-blue-500 bg-blue-500/10 border-blue-500/20",
-    gradient: "from-blue-600/10 via-transparent to-transparent"
+    title: "Cash Flow Agent",
+    desc: "Simulates daily runway and burn rate dynamics. Flags liquidity risks early.",
+    status: "Active",
+    statusColor: "text-emerald-400 bg-emerald-400/10 border-emerald-400/20",
   },
   {
     icon: Zap,
     title: "Circular Logic Agent",
-    desc: "Resolves complex 3-statement circularity with vectorized accuracy — zero spreadsheet errors.",
-    status: "Logic Balanced",
-    statusColor: "text-yellow-400 bg-yellow-400/10 border-yellow-400/20",
-    gradient: "from-yellow-400/10 via-transparent to-transparent"
+    desc: "Resolves complex 3-statement circular references (like interest on revolving debt).",
+    status: "Active",
+    statusColor: "text-emerald-400 bg-emerald-400/10 border-emerald-400/20",
   },
   {
     icon: Fingerprint,
-    title: "Security & Provenance Agent",
-    desc: "Ensuresทุก cell update is cryptographically linked to an authorized human user.",
-    status: "Provenance: LOCKED",
-    statusColor: "text-rose-400 bg-rose-400/10 border-rose-400/20",
-    gradient: "from-rose-500/10 via-transparent to-transparent"
-  }
+    title: "Audit & Provenance Agent",
+    desc: "Logs every cell update with full attribution. See exactly who changed what.",
+    status: "Locked",
+    statusColor: "text-white/60 bg-white/5 border-white/10",
+  },
+  {
+    icon: Brain,
+    title: "Anomaly Detection Agent",
+    desc: "Spots unusual spending patterns, forecast deviations, and data inconsistencies.",
+    status: "Active",
+    statusColor: "text-emerald-400 bg-emerald-400/10 border-emerald-400/20",
+  },
 ]
 
 export function AgenticSection() {
   const { ref, isVisible } = useScrollReveal()
 
   return (
-    <section id="agents" className="py-28 px-4 sm:px-6 lg:px-8 bg-[#050810] relative section-divider overflow-hidden" ref={ref}>
-       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/5 rounded-full blur-[140px] pointer-events-none" />
+    <section id="agents" className="py-24 sm:py-28 px-4 sm:px-6 lg:px-8 bg-[#050810] relative section-divider overflow-hidden" ref={ref}>
+       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/3 rounded-full blur-[140px] pointer-events-none" />
 
        <div className="max-w-7xl mx-auto relative z-10">
-          <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 glass-premium text-[10px] font-black uppercase tracking-widest text-accent mb-6 animate-pulse-glow">
-                <UserCog className="w-3 h-3 text-accent" />
-                Human-in-the-Loop Orchestration
+          <div className={`text-center mb-14 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs font-semibold text-accent mb-6">
+                <UserCog className="w-3.5 h-3.5 text-accent" />
+                AI That Assists — You Decide
              </div>
-             <h2 className="text-3xl sm:text-5xl font-black text-white mb-6 tracking-tight">
-                Agentic AI Orchestration. <span className="text-gradient-accent text-white">Controlled by You.</span>
+             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-5 tracking-tight">
+                12 Autonomous Agents to compound your finance team's output.<br/>
+                <span className="text-white/50 text-2xl sm:text-3xl block mt-2">Zero loss of control.</span>
              </h2>
-             <p className="text-lg text-white/80 max-w-2xl mx-auto leading-relaxed font-medium">
-                Meet your 12 specialized AI agents. They analyze, forecast, and document at machine speed—while you maintain absolute governance, approval authority, and final CFO control.
+             <p className="text-base sm:text-lg text-white/50 max-w-2xl mx-auto leading-relaxed">
+                Each agent handles a specific finance task — analyzing, forecasting, and flagging issues at machine speed. But every output requires your team's explicit approval before it executes.
              </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
              {agents.map((agent, i) => (
                <div
                  key={i}
-                 className={`glass-premium p-6 sm:p-8 rounded-[2rem] border border-white/10 relative overflow-hidden group hover:border-accent/40 transition-all duration-700 bg-gradient-to-br from-black/60 to-transparent ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-                 style={{ transitionDelay: `${i * 80}ms` }}
+                 className={`glass-premium p-5 sm:p-6 rounded-2xl border border-white/5 relative overflow-hidden group hover:border-accent/30 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(0,242,255,0.08)] transition-all duration-500 cursor-default ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                 style={{ transitionDelay: `${i * 40}ms` }}
                >
-                 {/* Hover Gradient Overlay */}
-                 <div className={`absolute inset-0 bg-gradient-to-br ${agent.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-                 
-                 <div className="flex justify-between items-start mb-6 relative z-10">
-                    <div className="w-12 h-12 glass-premium rounded-xl flex items-center justify-center border border-white/10 bg-white/5 group-hover:scale-110 transition-transform duration-500 group-hover:border-accent/30 group-hover:shadow-[0_0_15px_rgba(0,242,255,0.1)]">
-                       <agent.icon className="w-6 h-6 text-white/70 group-hover:text-accent transition-colors" />
+                 <div className="absolute inset-0 bg-gradient-to-br from-accent/0 via-transparent to-transparent group-hover:from-accent/5 transition-colors duration-500" />
+                 <div className="flex justify-between items-start mb-4 relative z-10">
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center border border-white/10 group-hover:bg-accent/10 group-hover:border-accent/40 transition-all duration-500">
+                       <agent.icon className="w-5 h-5 text-white/50 group-hover:text-accent transition-colors duration-500" />
                     </div>
-                    {/* Status Pill */}
-                    <div className={`px-2 py-0.5 rounded text-[8px] font-black uppercase tracking-widest border ${agent.statusColor} shadow-inner`}>
+                    <div className={`px-2 py-0.5 rounded text-[8px] font-bold uppercase tracking-wider border transition-colors duration-500 ${agent.statusColor} group-hover:shadow-[0_0_10px_rgba(52,211,153,0.3)]`}>
                        {agent.status}
                     </div>
                  </div>
                  
-                 <h3 className="text-lg font-black text-white mb-2 tracking-tight relative z-10 leading-tight group-hover:text-accent transition-colors">{agent.title}</h3>
-                 <p className="text-xs text-white/60 leading-relaxed font-medium relative z-10 group-hover:text-white/80 transition-colors">
+                 <h3 className="text-sm font-bold text-white mb-1.5 leading-tight relative z-10 group-hover:text-accent transition-colors duration-500">{agent.title}</h3>
+                 <p className="text-xs text-white/45 leading-relaxed relative z-10 group-hover:text-white/70 transition-colors duration-500">
                    {agent.desc}
                  </p>
                </div>
              ))}
           </div>
 
-          {/* Bottom Security Bar */}
-          <div className={`mt-14 max-w-4xl mx-auto transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.6s' }}>
-             <div className="glass-premium rounded-2xl p-6 border border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 text-[10px] font-black uppercase tracking-[0.2em] px-10 shadow-xl bg-black/40">
-                <div className="flex items-center gap-3 text-white/50">
-                   <Lock className="w-4 h-4 text-white/30" />
-                   Isolated Tenant Architecture
+          {/* Bottom bar */}
+          <div className={`mt-10 max-w-3xl mx-auto transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.5s' }}>
+             <div className="glass-premium rounded-xl p-5 border border-white/5 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-xs font-medium">
+                <div className="flex items-center gap-2 text-white/40">
+                   <Lock className="w-3.5 h-3.5" />
+                   <span>Isolated architecture</span>
                 </div>
-                <div className="w-px h-6 bg-white/10 hidden md:block" />
-                <div className="flex items-center gap-3 text-emerald-400">
-                   <CheckCircle className="w-4 h-4 text-emerald-400 animate-pulse" />
-                   12/12 Agent Systems Active & Under Governance
+                <div className="hidden sm:block w-px h-4 bg-white/10" />
+                <div className="flex items-center gap-2 text-emerald-400">
+                   <CheckCircle className="w-3.5 h-3.5" />
+                   <span>All agents under human governance</span>
                 </div>
-                <div className="hidden lg:flex items-center gap-3 text-accent/60">
-                   <Activity className="w-4 h-4 accent-pulse" />
-                   Real-time Logical Recalc
+                <div className="hidden sm:block w-px h-4 bg-white/10" />
+                <div className="flex items-center gap-2 text-white/40">
+                   <Activity className="w-3.5 h-3.5" />
+                   <span>Real-time processing</span>
                 </div>
              </div>
           </div>
