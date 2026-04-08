@@ -32,7 +32,7 @@ export function HeroSection() {
   }, [])
 
   return (
-    <section ref={ref} data-hero-section className="relative min-h-screen pt-32 pb-20 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center overflow-hidden">
+    <section ref={ref} data-hero-section id="hero" aria-label="FinaPilot — Agentic AI FP&A Operating System" className="relative min-h-screen pt-32 pb-20 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center overflow-hidden">
       {/* ═══ PREMIUM ANIMATED BACKGROUND ═══ */}
       <div className="absolute inset-0 bg-[#050810]" />
       
@@ -67,10 +67,15 @@ export function HeroSection() {
             Now accepting Design Partners — 10 spots available
           </div>
 
-          {/* HEADLINE */}
-          <div className="min-h-[140px] sm:min-h-[180px] mb-6 relative flex items-center justify-center">
+          {/* SEO H1 — Always visible to crawlers, contains all target keywords */}
+          <h1 className="sr-only">
+            FinaPilot: Agentic AI FP&A OS — AI-Powered Financial Planning, Scenario Modeling & Monte Carlo Simulations for SaaS CFOs
+          </h1>
+
+          {/* ANIMATED HEADLINE (visual only — H1 is above for SEO) */}
+          <div className="min-h-[140px] sm:min-h-[180px] mb-6 relative flex items-center justify-center" role="presentation" aria-hidden="true">
             {headlines.map((headline, i) => (
-              <h1 
+              <div 
                 key={i}
                 className={`absolute w-full text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.1] transition-all duration-1000 ${
                   headlineIndex === i 
@@ -79,11 +84,11 @@ export function HeroSection() {
                 }`}
               >
                 {headline}
-              </h1>
+              </div>
             ))}
           </div>
 
-          {/* SUBHEADLINE */}
+          {/* SUBHEADLINE — contains secondary keywords naturally */}
           <p className="text-base sm:text-lg md:text-xl text-white/60 max-w-4xl mx-auto leading-relaxed mb-4">
             Stop fighting brittle spreadsheets. FinaPilot helps finance teams rebuild their models with <span className="text-white font-semibold">SOC 2 architecture ready security</span>, run forecasts instantly, and generate board-ready reports — with full audit traceability.
           </p>

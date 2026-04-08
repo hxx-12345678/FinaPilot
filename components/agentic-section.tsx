@@ -2,6 +2,7 @@
 
 import { Bot, LineChart, Shield, Lock, Calculator, Activity, Send, Zap, GitBranch, BarChart3, Fingerprint, Database, CheckCircle, Brain, UserCog } from "lucide-react"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
+import SplashCursor from "@/components/splash-cursor"
 
 const agents = [
   {
@@ -94,7 +95,15 @@ export function AgenticSection() {
   const { ref, isVisible } = useScrollReveal()
 
   return (
-    <section id="agents" className="py-24 sm:py-28 px-4 sm:px-6 lg:px-8 bg-[#050810] relative section-divider overflow-hidden" ref={ref}>
+    <section id="agents" className="py-24 sm:py-28 px-4 sm:px-6 lg:px-8 bg-[#050810] relative section-divider overflow-hidden" ref={ref} aria-label="12 autonomous AI agents for FP&A — risk, variance analysis, financial modeling, reporting, scenario planning, Monte Carlo, cash flow, anomaly detection">
+       {/* ═══ SPLASH CURSOR (REACT BITS) ═══ */}
+       <SplashCursor 
+         SIM_RESOLUTION={128}
+         DYE_RESOLUTION={1024}
+         SPLAT_RADIUS={0.15}
+         COLOR_UPDATE_SPEED={8}
+         BACK_COLOR={{ r: 0.02, g: 0.03, b: 0.06 }} 
+       />
        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/3 rounded-full blur-[140px] pointer-events-none" />
 
        <div className="max-w-7xl mx-auto relative z-10">

@@ -39,7 +39,7 @@ export function FAQSection() {
   const { ref, isVisible } = useScrollReveal()
 
   return (
-    <section id="faq" className="py-24 sm:py-28 px-4 sm:px-6 lg:px-8 bg-[#0B0F19] section-divider" ref={ref}>
+    <section id="faq" className="py-24 sm:py-28 px-4 sm:px-6 lg:px-8 bg-[#0B0F19] section-divider" ref={ref} aria-label="Frequently asked questions about FinaPilot — AI FP&A, data security, Design Partner Program, Excel migration">
       <div className="max-w-3xl mx-auto">
         <div className={`text-center mb-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs font-semibold text-accent mb-6">

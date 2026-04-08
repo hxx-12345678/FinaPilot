@@ -37,7 +37,7 @@ export function Footer() {
   )
 
   return (
-    <footer className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/5 bg-[#080B14] relative overflow-hidden">
+    <footer className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/5 bg-[#080B14] relative overflow-hidden" role="contentinfo" aria-label="FinaPilot footer — navigation, contact, and legal links">
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-accent/3 rounded-full blur-[120px] pointer-events-none" />
       
       <div className="max-w-7xl mx-auto relative z-10">
@@ -93,8 +93,9 @@ export function Footer() {
           <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
             <a href="/" className="text-[11px] text-white/60 hover:text-white transition-colors font-bold uppercase tracking-widest cursor-pointer">© {currentYear} FinaPilot</a>
             <div className="flex items-center gap-6">
-              <a href="#" className="text-[11px] text-white/60 hover:text-white transition-colors font-black tracking-tighter">PRIVACY</a>
-              <a href="#" className="text-[11px] text-white/60 hover:text-white transition-colors font-black tracking-tighter">TERMS</a>
+              <a href="/privacy" className="text-[11px] text-white/60 hover:text-white transition-colors font-black tracking-tighter">PRIVACY</a>
+              <a href="/terms" className="text-[11px] text-white/60 hover:text-white transition-colors font-black tracking-tighter">TERMS</a>
+              <a href="mailto:hello@finapilot.com" className="text-[11px] text-white/60 hover:text-accent transition-colors font-black tracking-tighter">CONTACT</a>
             </div>
           </div>
 

@@ -51,7 +51,7 @@ export function SolutionSection() {
   const { ref, isVisible } = useScrollReveal()
 
   return (
-    <section id="solution" className="py-24 sm:py-28 px-4 sm:px-6 lg:px-8 bg-[#0B0F19] relative section-divider" ref={ref}>
+    <section id="solution" className="py-24 sm:py-28 px-4 sm:px-6 lg:px-8 bg-[#0B0F19] relative section-divider" ref={ref} aria-label="FinaPilot platform capabilities — scenario planning, semantic ledger, Monte Carlo, audit traceability, financial modeling">
       <div className="absolute top-1/3 left-0 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">

@@ -39,7 +39,7 @@ export function ProblemSection() {
   const { ref: gridRef, isVisible: gridVisible } = useScrollReveal();
 
   return (
-    <section id="problem" className="py-24 sm:py-28 px-4 sm:px-6 lg:px-8 bg-[#0B0F19] section-divider">
+    <section id="problem" className="py-24 sm:py-28 px-4 sm:px-6 lg:px-8 bg-[#0B0F19] section-divider" aria-label="FP&A pain points that FinaPilot solves — scattered data, broken Excel formulas, slow scenario planning">
       <div className="max-w-7xl mx-auto">
         <div 
           ref={headerRef}
