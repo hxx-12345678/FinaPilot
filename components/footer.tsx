@@ -95,7 +95,8 @@ export function Footer() {
             <div className="flex items-center gap-6">
               <a href="/privacy" className="text-[11px] text-white/60 hover:text-white transition-colors font-black tracking-tighter">PRIVACY</a>
               <a href="/terms" className="text-[11px] text-white/60 hover:text-white transition-colors font-black tracking-tighter">TERMS</a>
-              <a href="mailto:hello@finapilot.com" className="text-[11px] text-white/60 hover:text-accent transition-colors font-black tracking-tighter">CONTACT</a>
+              <a href="mailto:founder@finapilot.com" className="text-[11px] text-white/60 hover:text-accent transition-colors font-black tracking-tighter">FOUNDER</a>
+              <a href="mailto:support@finapilot.com" className="text-[11px] text-white/60 hover:text-accent transition-colors font-black tracking-tighter">SUPPORT</a>
             </div>
           </div>
 
