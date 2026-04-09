@@ -20,6 +20,8 @@ function SplashCursor({
 }) {
   const canvasRef = useRef(null);
   const animationFrameId = useRef(null);
+  const observerRef = useRef(null);
+  const isInView = useRef(true);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -41,9 +43,11 @@ function SplashCursor({
       this.color = [0, 0, 0];
     }
 
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024;
+    
     let config = {
-      SIM_RESOLUTION,
-      DYE_RESOLUTION,
+      SIM_RESOLUTION: isMobile ? Math.min(SIM_RESOLUTION, 64) : SIM_RESOLUTION,
+      DYE_RESOLUTION: isMobile ? Math.min(DYE_RESOLUTION, 512) : DYE_RESOLUTION,
       CAPTURE_RESOLUTION,
       DENSITY_DISSIPATION,
       VELOCITY_DISSIPATION,
@@ -524,9 +528,13 @@ function SplashCursor({
       gl.enableVertexAttribArray(0);
       return (target, clear = false) => {
         if (target == null) {
-          gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight);
+          const w = gl.drawingBufferWidth;
+          const h = gl.drawingBufferHeight;
+          if (w <= 0 || h <= 0) return;
+          gl.viewport(0, 0, w, h);
           gl.bindFramebuffer(gl.FRAMEBUFFER, null);
         } else {
+          if (target.width <= 0 || target.height <= 0) return;
           gl.viewport(0, 0, target.width, target.height);
           gl.bindFramebuffer(gl.FRAMEBUFFER, target.fbo);
         }
@@ -676,9 +684,13 @@ function SplashCursor({
     let colorUpdateTimer = 0.0;
 
     function updateFrame() {
-      if (!isActive) return;
+      if (!isActive || !isInView.current) return;
       const dt = calcDeltaTime();
-      if (resizeCanvas()) initFramebuffers();
+      if (resizeCanvas()) {
+        const width = canvas.width;
+        const height = canvas.height;
+        if (width > 0 && height > 0) initFramebuffers();
+      }
       updateColors(dt);
       applyInputs();
       step(dt);
@@ -697,6 +709,10 @@ function SplashCursor({
     function resizeCanvas() {
       let width = scaleByPixelRatio(canvas.clientWidth);
       let height = scaleByPixelRatio(canvas.clientHeight);
+      
+      // Stop if dimensions are invalid or zero
+      if (width <= 0 || height <= 0) return false;
+
       if (canvas.width !== width || canvas.height !== height) {
         canvas.width = width;
         canvas.height = height;
@@ -940,16 +956,18 @@ function SplashCursor({
     }
 
     function getResolution(resolution) {
-      let aspectRatio = gl.drawingBufferWidth / gl.drawingBufferHeight;
+      let width = gl.drawingBufferWidth || 1;
+      let height = gl.drawingBufferHeight || 1;
+      let aspectRatio = width / height;
       if (aspectRatio < 1) aspectRatio = 1.0 / aspectRatio;
       const min = Math.round(resolution);
       const max = Math.round(resolution * aspectRatio);
-      if (gl.drawingBufferWidth > gl.drawingBufferHeight) return { width: max, height: min };
+      if (width > height) return { width: max, height: min };
       else return { width: min, height: max };
     }
 
     function scaleByPixelRatio(input) {
-      const pixelRatio = window.devicePixelRatio || 1;
+      const pixelRatio = typeof window !== 'undefined' ? window.devicePixelRatio : 1;
       return Math.floor(input * pixelRatio);
     }
 
@@ -1021,11 +1039,28 @@ function SplashCursor({
     window.addEventListener('touchmove', handleTouchMove, false);
     window.addEventListener('touchend', handleTouchEnd);
 
+    // Intersection Observer to pause/play based on visibility
+    observerRef.current = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        isInView.current = entry.isIntersecting;
+        if (entry.isIntersecting) {
+          lastUpdateTime = Date.now();
+          updateFrame();
+        }
+      });
+    }, { threshold: 0.01 });
+    
+    observerRef.current.observe(canvas);
+
     updateFrame();
 
     // Cleanup function
     return () => {
       isActive = false;
+
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
 
       // Cancel animation frame
       if (animationFrameId.current) {
