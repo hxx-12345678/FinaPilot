@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, Shield, Zap, Brain, CheckCircle2 } from "lucide-react"
 import { useCalendly } from "@/components/calendly-provider"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
-import SplashCursor from "@/components/splash-cursor"
 
 export function FinalCTASection() {
   const { openCalendly } = useCalendly()
@@ -13,14 +12,6 @@ export function FinalCTASection() {
   return (
     <section className="py-24 sm:py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden" ref={ref}>
       <div className="absolute inset-0 bg-gradient-to-br from-accent/90 via-emerald-700 to-teal-900" />
-      {/* ═══ SPLASH CURSOR (REACT BITS) ═══ */}
-      <SplashCursor 
-        SIM_RESOLUTION={128}
-        DYE_RESOLUTION={1024}
-        SPLAT_RADIUS={0.2}
-        COLOR_UPDATE_SPEED={12}
-        BACK_COLOR={{ r: 0.05, g: 0.2, b: 0.2 }} 
-      />
       <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.3) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
 
       <div className={`max-w-3xl mx-auto text-center relative z-10 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>

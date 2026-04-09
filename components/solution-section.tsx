@@ -110,7 +110,7 @@ export function SolutionSection() {
         <div className={`mt-8 p-5 rounded-xl glass-premium border border-accent/15 flex flex-col sm:flex-row items-center gap-4 max-w-4xl mx-auto transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '0.6s' }}>
           <ShieldCheck className="w-6 h-6 text-accent shrink-0" />
           <p className="text-sm text-white/60 leading-relaxed text-center sm:text-left">
-            <span className="text-white font-semibold">Human-in-the-loop by design.</span> AI agents suggest forecasts and flag anomalies, but every financial output requires human approval before it goes anywhere.
+            <span className="text-white font-semibold">Human-in-the-loop by design.</span> AI agents suggest forecasts and flag anomalies, but every financial output requires human approval. <a href="/trust" className="text-white font-semibold underline decoration-accent/30 hover:decoration-accent transition-all">Verify our security and trust standards</a>.
           </p>
         </div>
       </div>

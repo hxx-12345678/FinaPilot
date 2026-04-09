@@ -7,13 +7,6 @@ import { useCalendly } from "@/components/calendly-provider"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 import SplashCursor from "@/components/splash-cursor"
 
-const proofPoints = [
-  { text: "Replace complex Excel models with structured financial logic", icon: FileSpreadsheet },
-  { text: "Run scenario planning & Monte Carlo in seconds", icon: TrendingUp },
-  { text: "Full audit trail — every number is traceable", icon: Shield },
-  { text: "Powered by structured financial logic and human-controlled AI", icon: Brain },
-]
-
 export function HeroSection() {
   const { openCalendly } = useCalendly()
   const { ref, isVisible } = useScrollReveal()
@@ -44,7 +37,6 @@ export function HeroSection() {
         COLOR_UPDATE_SPEED={10}
         BACK_COLOR={{ r: 0.02, g: 0.03, b: 0.06 }} 
       />
-      
       {/* Static Background Ambient Orbs */}
       <div className="absolute top-[-20%] right-[-10%] w-[700px] h-[700px] rounded-full opacity-20 animate-float" style={{ background: 'radial-gradient(circle, rgba(0,242,255,0.08) 0%, transparent 70%)', animationDuration: '12s' }} />
       <div className="absolute bottom-[-15%] left-[-10%] w-[600px] h-[600px] rounded-full opacity-15 animate-float" style={{ background: 'radial-gradient(circle, rgba(59,130,246,0.08) 0%, transparent 70%)', animationDuration: '15s', animationDelay: '3s' }} />
@@ -116,9 +108,6 @@ export function HeroSection() {
             </div>
           </div>
         </div>
-
-
-
       </div>
     </section>
   )

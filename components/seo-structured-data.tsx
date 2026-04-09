@@ -98,7 +98,7 @@ export function SoftwareApplicationSchema() {
       "priceCurrency": "USD",
       "priceValidUntil": "2026-12-31",
       "availability": "https://schema.org/LimitedAvailability",
-      "url": "https://www.finapilot.com/#program"
+      "url": "https://www.finapilot.com/"
     },
     "featureList": [
       "Branch-based multi-track scenario planning",
@@ -180,40 +180,40 @@ export function WebSiteSchema() {
 export function FAQPageSchema() {
   const faqData = [
     {
-      question: "What is FinaPilot?",
-      answer: "FinaPilot is an agentic AI-powered Financial Planning and Analysis (FP&A) operating system designed for SaaS CFOs, FP&A teams, and finance leaders. It replaces brittle spreadsheets with structured, auditable financial models powered by 12 autonomous AI agents — including scenario planning, Monte Carlo simulations, semantic ledger unification, and audit-grade traceability — all under full human control. Unlike generic AI tools, FinaPilot uses deterministic math for core calculations and requires human approval for every financial output."
-    },
-    {
-      question: "How is FinaPilot different from Anaplan, Adaptive Planning, or Excel?",
-      answer: "Legacy enterprise tools like Anaplan require months of implementation, custom scripting, and expensive consultants. FinaPilot is built for modern finance teams that want speed without sacrificing transparency. It recalculates full 3-statement models in under 4ms, runs 10,000+ Monte Carlo scenarios instantly, and provides cell-level audit trails — all with AI assistance that stays under human control. During the Design Partner pilot, FinaPilot's team handles the implementation work alongside your finance team."
-    },
-    {
-      question: "What AI agents does FinaPilot provide?",
-      answer: "FinaPilot includes 12 specialized autonomous AI agents: Risk & Compliance Agent (macro stress-testing), Variance Analysis Agent (plan vs actual with mathematical attribution), Financial Modeling Agent (3-statement model building), Reporting Agent (board narrative auto-drafting), Market Monitoring Agent (macroeconomic indicator alerts), Resource Allocation Agent (headcount & CAPEX optimization), Data Cleaning Agent (ERP/CSV normalization), Scenario Planning Agent (Monte Carlo simulations), Cash Flow Agent (daily runway simulation), Circular Logic Agent (3-statement circular reference resolution), Audit & Provenance Agent (cell-level change logging), and Anomaly Detection Agent (forecast deviation spotting)."
-    },
-    {
       question: "Does FinaPilot use AI hallucinations for financial calculations?",
-      answer: "No. FinaPilot's core financial calculations use deterministic math — not LLM predictions. AI agents assist with analysis, anomaly detection, and report drafting, but every output requires explicit human approval before execution. The AI suggests — your CFO decides. This is fundamentally different from generic AI tools that hallucinate numbers without proof."
+      answer: "No. FinaPilot's core financial engine uses deterministic math — not probabilistic LLM predictions. AI agents are used for orchestration and analysis, but every calculation is executed on a rigid, code-based ledger. Every number is traceable back to its origin through our Provenance Drawer."
     },
     {
-      question: "How does FinaPilot protect financial data?",
-      answer: "FinaPilot uses AES-256 encryption at rest and TLS 1.3 encryption in transit. It operates on isolated tenant architecture where your data is never mixed with other customers. The platform maintains role-based access control, immutable audit logs, and is GDPR-ready. FinaPilot never trains AI models on your financial data. The architecture is engineered and ready for SOC 2 Type II compliance."
+      question: "How does FinaPilot protect sensitive financial data?",
+      answer: "FinaPilot implements AES-256 encryption at rest and TLS 1.3 in transit. We use isolated tenant architecture and explicitly do not train global AI models on your private financial data. Our infrastructure is architected for SOC 2 Type II compliance."
     },
     {
-      question: "What is the FinaPilot Design Partner Program?",
-      answer: "The Design Partner Program is an exclusive hands-on partnership limited to 10 selected finance teams. As a design partner, FinaPilot rebuilds your financial model inside the platform, configures all 12 AI agents for your specific workflows, provides direct access to founders via weekly calls and dedicated Slack/WhatsApp channels, and gives you priority roadmap influence. Founding partners also lock in discounted lifetime pricing."
+      question: "Which ERPs and data sources does FinaPilot support?",
+      answer: "We provide native API connectors for major ERPs including NetSuite, Sage Intacct, QuickBooks Online, Xero, and SAP. We also offer an intelligent CSV/Excel Import Wizard that normalizes trial labels into unified objects automatically."
     },
     {
-      question: "Can FinaPilot migrate complex Excel models?",
-      answer: "Yes — model migration is a core part of the Design Partner Program. The FinaPilot team leads the migration of multi-sheet 3-statement models, resolves circular references (like interest expense on revolving debt), and ensures financial logic transfers accurately. Your team provides the knowledge; FinaPilot handles the technical migration in days, not months."
+      question: "How is FinaPilot different from Anaplan or Adaptive Planning?",
+      answer: "Legacy tools require months of custom scripting and expensive consultants. FinaPilot is an active orchestration engine that deploys in days, using 12 autonomous AI agents to rebuild your logic into a structured, real-time environment that recalculates in under 4ms."
     },
     {
-      question: "What is a semantic ledger in FinaPilot?",
-      answer: "FinaPilot's semantic ledger is a unified schema that normalizes and maps data from disparate ERP sources (SAP, Oracle, QuickBooks, Xero, Zoho Books) into a single structured financial model. It eliminates the problem of scattered data across multiple systems by creating a single source of truth with full provenance tracking — essentially an ERP-agnostic data layer built for FP&A."
+      question: "What is the ROI of implementing AI in our FP&A workflow?",
+      answer: "By automating Trial Balance normalization, multi-entity consolidations, and variance attribution, our partners report reclaiming 50+ analyst hours per month, allowing teams to focus on strategic capital allocation instead of manual data entry."
     },
     {
-      question: "How does Monte Carlo simulation work in FinaPilot?",
-      answer: "FinaPilot's Monte Carlo Runway engine runs 10,000+ probabilistic simulations across thousands of paths to project cash survival outcomes. It computes VaR (Value at Risk) at P95 confidence levels, evaluates covenant compliance, and flags liquidity risks — all recalculated in under 4 milliseconds. Results are reviewed and validated by your team before any decisions are made."
+      question: "How does the system handle reconciliation between accrual and cash sources?",
+      answer: "FinaPilot normalizes ingestion cycles from disparate sources. It reconciles accrual-based accounting from your ERP against usage-based billing logs (e.g., AWS/Stripe) at the GL level to identify variances before month-end close."
+    },
+    {
+      question: "Can we automate the separation of 'Volume' vs 'Price' variances in BvA?",
+      answer: "Absolutely. FinaPilot’s Budget vs Actual module ingests production volume metrics alongside financial data, automatically isolating price, mix, and volume variances for precise attribution."
+    },
+    {
+      question: "How do we handle re-forecasting when business pivot speed is high?",
+      answer: "We use a rolling forecast architecture that decouples the 'baseline' from formal budget snapshots. This allows for continuous model updates without triggering full-scale re-consolidation."
+    },
+    {
+      question: "How can we trust AI-drafted board narratives?",
+      answer: "We use RAG (Retrieval-Augmented Generation) frameworks that constrain the AI to query only validated, reconciled datasets. The AI drafts the narrative, but highlights every metric with a click-through link to the underlying math."
     }
   ];
 
@@ -251,11 +251,11 @@ export function BreadcrumbSchema({ page }: { page: 'home' | 'trust' | 'features'
     ],
     features: [
       { name: "Home", url: "https://www.finapilot.com/" },
-      { name: "Platform Features", url: "https://www.finapilot.com/#solution" }
+      { name: "Platform Features", url: "https://www.finapilot.com/features" }
     ],
     agents: [
       { name: "Home", url: "https://www.finapilot.com/" },
-      { name: "AI Agents", url: "https://www.finapilot.com/#agents" }
+      { name: "AI Agents", url: "https://www.finapilot.com/features" }
     ]
   };
 

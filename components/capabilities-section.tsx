@@ -30,7 +30,7 @@ const capabilities = [
   },
   {
     title: "12 Specialized AI Agents",
-    desc: "Risk, compliance, reporting, scenario planning — each agent handles one job well, and reports back to your team for approval.",
+    desc: "Risk, compliance, reporting, scenario planning — each agent handles one specialized job. [Explore the full agent functional specs](/features).",
     icon: Bot,
     stat: "12 Agents",
   },

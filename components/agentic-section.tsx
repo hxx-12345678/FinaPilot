@@ -117,7 +117,7 @@ export function AgenticSection() {
                 <span className="text-white/50 text-2xl sm:text-3xl block mt-2">Zero loss of control.</span>
              </h2>
              <p className="text-base sm:text-lg text-white/50 max-w-2xl mx-auto leading-relaxed">
-                Each agent handles a specific finance task — analyzing, forecasting, and flagging issues at machine speed. But every output requires your team's explicit approval before it executes.
+                Each agent handles a specific finance task — analyzing, forecasting, and flagging issues at machine speed. <a href="/features" className="text-white font-semibold underline decoration-accent/30 hover:decoration-accent transition-all">Explore the full agent architecture and capabilities</a>.
              </p>
           </div>
 

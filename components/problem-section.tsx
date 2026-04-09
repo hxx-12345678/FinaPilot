@@ -75,7 +75,7 @@ export function ProblemSection() {
               
               <h3 className="text-base font-bold text-white mb-2.5 leading-snug">{problem.title}</h3>
               <p className="text-sm text-white/50 mb-8 leading-relaxed">
-                {problem.desc}
+                Generic AI tools hallucinate numbers without proof. <a href="/ai-finance-tools" className="text-white hover:text-red-400 font-semibold underline decoration-red-500/30 transition-all">Learn the difference between chatbots and deterministic finance tools</a>.
               </p>
               
               <div className="pt-5 border-t border-white/5 mt-auto">

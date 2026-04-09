@@ -73,7 +73,7 @@ export function IntegrationsSection() {
               </div>
             </div>
             <p className="text-sm text-white/50 leading-relaxed mb-6 max-w-2xl">
-              FinaPilot utilizes SOC 2 encrypted pipeline infrastructure to securely mirror ERP ledgers. We are currently rolling out native sync capabilities directly to verified Design Partners.
+              FinaPilot utilizes SOC 2 encrypted pipeline infrastructure to securely mirror ERP ledgers. <a href="/trust" className="text-white font-semibold underline decoration-accent/30 hover:decoration-accent transition-all">Verify our security and compliance architecture</a> before syncing your production data.
             </p>
             
             <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3">

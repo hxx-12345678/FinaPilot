@@ -50,7 +50,7 @@ export function FAQSection() {
             Frequently Asked <span className="text-gradient-accent">Questions</span>
           </h2>
           <p className="text-base text-white/50">
-            Honest answers about how FinaPilot works, the Design Partner Program, and data security.
+            Honest answers about how FinaPilot works, the Design Partner Program, and data security. <a href="/faq" className="text-white font-semibold underline decoration-accent/30 hover:decoration-accent transition-all">Explore our full technical knowledge base</a>.
           </p>
         </div>
 
