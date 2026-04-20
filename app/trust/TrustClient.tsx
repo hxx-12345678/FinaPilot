@@ -115,7 +115,7 @@ export default function TrustCenterClient() {
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
                <button 
-                onClick={() => alert("While our formal whitepaper is being finalized alongside our certification, please email security@finapilot.com for a direct architectural briefing and PEN test summary.")}
+                onClick={() => alert("While our formal whitepaper is being finalized alongside our certification, please email support@finapilot.com for a direct architectural briefing and PEN test summary.")}
                 className="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-blue-700 hover:shadow-md hover:scale-[1.02] transition-all"
                 aria-label="Request a security architecture briefing from FinaPilot"
                >

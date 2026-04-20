@@ -190,6 +190,9 @@ export const metadata: Metadata = {
     "apple-mobile-web-app-title": "FinaPilot",
     "msapplication-TileColor": "#0B0F19",
     "format-detection": "telephone=no",
+    "slurp": "index, follow",
+    "duckduckbot": "index, follow",
+    "bingbot": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1",
   },
 }
 

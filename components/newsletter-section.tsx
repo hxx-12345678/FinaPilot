@@ -17,14 +17,21 @@ export function NewsletterSection() {
           Join the thousands of forward-thinking CFOs receiving our technical breakdowns on autonomous financial planning.
         </p>
         
-        <form className="flex flex-col sm:flex-row items-stretch justify-center gap-4 max-w-xl mx-auto" onSubmit={(e) => e.preventDefault()}>
+        <form 
+          className="flex flex-col sm:flex-row items-stretch justify-center gap-4 max-w-xl mx-auto" 
+          onSubmit={(e) => {
+            e.preventDefault();
+            alert("This is to notify the FinaPilot core team that you are interested. You can directly coordinate with the founder (founder@gmail.com) for marketing-related and other contents.");
+          }}
+        >
           <input 
             type="email" 
             placeholder="name@company.com" 
+            required
             className="flex-grow px-8 py-5 rounded-2xl bg-[#0B0F19]/80 border border-white/10 text-white placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all text-lg font-medium"
           />
           <button type="submit" className="px-10 py-5 bg-gradient-to-r from-blue-600 to-blue-400 text-white rounded-2xl font-bold text-lg hover:shadow-[0_10px_30px_rgba(37,99,235,0.4)] transition-all active:scale-95 whitespace-nowrap">
-            Subscribe
+            Notify Founder
           </button>
         </form>
         
