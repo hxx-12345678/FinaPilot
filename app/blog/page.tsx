@@ -1,3 +1,4 @@
+import { Metadata } from 'next'
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { NewsletterSection } from "@/components/newsletter-section"
@@ -11,6 +12,16 @@ import {
   FileText,
   Zap
 } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: 'Engineering & Strategy Hub | FinaPilot — Agentic AI Research',
+  description: 'Technical whitepapers and strategic insights on autonomous finance, deterministic modeling, and the future of FP&A orchestration. Read our research on AI hallucinations in finance.',
+  openGraph: {
+    title: 'FinaPilot Engineering & Strategy Hub',
+    description: 'Deep dives into agentic finance architecture and deterministic modeling for SaaS CFOs.',
+    url: 'https://www.finapilot.com/blog',
+  }
+}
 
 export default function BlogPage() {
   const posts = [

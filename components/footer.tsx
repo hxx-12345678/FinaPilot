@@ -65,17 +65,17 @@ export function Footer() {
             <div>
               <p className="text-[11px] font-black text-white uppercase tracking-[0.2em] mb-6">Product</p>
               <ul className="space-y-4">
-                <li><a href="/#agents" className="text-xs text-white/40 hover:text-accent transition-colors font-bold uppercase tracking-widest">AI Agents</a></li>
-                <li><a href="/#integrations" className="text-xs text-white/40 hover:text-accent transition-colors font-bold uppercase tracking-widest">Ingestion</a></li>
-                <li><a href="/trust" className="text-xs text-white/40 hover:text-accent transition-colors font-bold uppercase tracking-widest">Security</a></li>
+                <li><a href="/faq" className="text-xs text-white/40 hover:text-accent transition-colors font-bold uppercase tracking-widest">FAQ</a></li>
+                <li><a href="/ai-finance-tools" className="text-xs text-white/40 hover:text-accent transition-colors font-bold uppercase tracking-widest">AI Comparison</a></li>
+                <li><a href="/#integrations" className="text-xs text-white/40 hover:text-accent transition-colors font-bold uppercase tracking-widest">Integrations</a></li>
               </ul>
             </div>
             <div>
               <p className="text-[11px] font-black text-white uppercase tracking-[0.2em] mb-6">Engagement</p>
               <ul className="space-y-4">
-                <li><a href="/#program" className="text-xs text-white/40 hover:text-accent transition-colors font-black uppercase tracking-widest">Design Partner Program</a></li>
+                <li><a href="/blog" className="text-xs text-white/40 hover:text-accent transition-colors font-black uppercase tracking-widest">Engineering Hub</a></li>
                 <li><a href="/trust" className="text-xs text-white/40 hover:text-accent transition-colors font-black uppercase tracking-widest flex items-center gap-2">Trust Center <ArrowUpRight className="w-3 h-3" /></a></li>
-                <li><a href="/#faq" className="text-xs text-white/40 hover:text-accent transition-colors font-black uppercase tracking-widest">FAQ</a></li>
+                <li><a href="/#program" className="text-xs text-white/40 hover:text-accent transition-colors font-black uppercase tracking-widest">Partner Program</a></li>
               </ul>
             </div>
             <div className="hidden sm:block">

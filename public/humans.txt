@@ -1,0 +1,11 @@
+/* TEAM */
+  Founder: FinaPilot Team
+  Contact: hello@finapilot.com
+  Twitter: @FinaPilot
+  From: San Francisco, CA
+
+/* SITE */
+  Last Updated: 2026-04-20
+  Standards: HTML5, CSS3, Agentic AI, Next.js
+  Components: React, Tailwind, Framer Motion
+  Software: FinaPilot Agentic FP&A Operating System

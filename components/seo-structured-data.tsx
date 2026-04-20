@@ -64,9 +64,13 @@ export function OrganizationSchema() {
       "DAG Financial Modeling",
       "Budget vs Actual Analysis",
       "Investor Dashboard",
+      "Deterministic Multi-Agent Orchestration",
+      "Zero-hallucination finance tools",
+      "Agentic Finance Operating System",
       "DCF Modeling",
       "LBO Modeling"
-    ]
+    ],
+    "keywords": "Agentic FP&A, AI CFO, FinaPilot, Financial Planning, Financial Intelligence OS"
   };
 
   return (
@@ -212,8 +216,16 @@ export function FAQPageSchema() {
       answer: "We use a rolling forecast architecture that decouples the 'baseline' from formal budget snapshots. This allows for continuous model updates without triggering full-scale re-consolidation."
     },
     {
+      question: "How is FinaPilot different from other financial AI tools like Finpilot?",
+      answer: "FinaPilot is a specialized Agentic FP&A Operating System focused on deterministic corporate finance modeling (CFO workflows). While other tools like Finpilot focus on investment research and allocator workflows, FinaPilot rebuilds your internal financial models—from GL integration to board reporting—ensuring 100% mathematical accuracy without LLM hallucinations. FinaPilot is for the finance team inside the company, not for outside investors."
+    },
+    {
       question: "How can we trust AI-drafted board narratives?",
-      answer: "We use RAG (Retrieval-Augmented Generation) frameworks that constrain the AI to query only validated, reconciled datasets. The AI drafts the narrative, but highlights every metric with a click-through link to the underlying math."
+      answer: "We use RAG (Retrieval-Augmented Generation) frameworks that constrain the AI to query only validated, reconciled datasets. The AI drafts the narrative, but highlights every metric with a click-through link to the underlying math. This is a core part of the FinaPilot trust architecture."
+    },
+    {
+      question: "Is FinaPilot an investment tool or an FP&A platform?",
+      answer: "FinaPilot is a specialized FP&A Operating System designed for corporate SaaS finance teams. Unlike generic AI research tools, FinaPilot focuses internally on your GL, ERP, and budget data to run deterministic scenario modeling."
     }
   ];
 

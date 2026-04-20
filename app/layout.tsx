@@ -147,9 +147,15 @@ export const metadata: Metadata = {
 
   // ─── Verification (for Google Search Console + Bing) ───
   verification: {
-    google: "YOUR_GOOGLE_VERIFICATION_CODE",
-    yandex: "YOUR_YANDEX_VERIFICATION_CODE",
-    // other: { "msvalidate.01": "YOUR_BING_VERIFICATION_CODE" },
+    google: "google-site-verification-placeholder",
+    yandex: "yandex-verification-placeholder",
+    other: { 
+      "msvalidate.01": "msvalidate-placeholder",
+      "brave-verification": "brave-verification-placeholder",
+      "msapplication-TileColor": "#0B0F19",
+      "msapplication-TileImage": "/icon.svg",
+      "msapplication-config": "/browserconfig.xml"
+    },
   },
 
   // ─── App-Level Meta ───
@@ -204,10 +210,17 @@ export default function RootLayout({
         {/* ═══ Canonical fallback ═══ */}
         <link rel="canonical" href="https://www.finapilot.com" />
 
-        {/* ═══ Hreflang tags (International SEO) ═══ */}
         <link rel="alternate" hrefLang="en-US" href="https://www.finapilot.com" />
         <link rel="alternate" hrefLang="en-GB" href="https://www.finapilot.com" />
         <link rel="alternate" hrefLang="x-default" href="https://www.finapilot.com" />
+        
+        {/* ═══ Browser Branding (Public Manifest) ═══ */}
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="apple-touch-icon" href="/icon.svg" />
+        <link rel="mask-icon" href="/icon.svg" color="#0B0F19" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="msapplication-tap-highlight" content="no" />
       </head>
       <body className={`font-sans antialiased`}>
         <CalendlyProvider>

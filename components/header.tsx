@@ -128,6 +128,7 @@ export function Header() {
 
   const getHref = (item: string) => {
     if (item === 'Trust') return '/trust'
+    if (item === 'Platform') return '/ai-finance-tools'
     return `#${item.toLowerCase()}`
   }
 
@@ -190,6 +191,13 @@ export function Header() {
               </div>
             ))}
             
+            <a 
+              href="/blog"
+              className="px-3 py-2 text-xs font-semibold uppercase tracking-wider rounded-lg text-white/50 hover:text-white transition-all ml-1"
+            >
+              Blog
+            </a>
+
             <div className="w-px h-5 bg-white/10 mx-3" />
 
             <Button 

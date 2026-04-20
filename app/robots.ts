@@ -11,15 +11,19 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/_next/', '/admin/', '/private/'],
       },
       {
-        userAgent: ['GPTBot', 'Google-Extended'],
-        disallow: ['/'],
-      },
-      {
-        userAgent: 'OAI-SearchBot',
+        // ═══ AEO: ENSURE AI ENGINES CAN INDEX BRAND ENTITY ═══
+        userAgent: [
+          'GPTBot', 
+          'Google-Extended', 
+          'Claude-Web', 
+          'applebot-extended', 
+          'CCBot',
+          'PerplexityBot'
+        ],
         allow: '/',
       },
       {
-        userAgent: ['Googlebot', 'Bingbot'],
+        userAgent: ['Googlebot', 'Bingbot', 'Bravebot'],
         allow: '/',
       },
     ],

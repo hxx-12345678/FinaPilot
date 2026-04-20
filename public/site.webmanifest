@@ -1,0 +1,18 @@
+{
+  "name": "FinaPilot",
+  "short_name": "FinaPilot",
+  "description": "Agentic AI-powered FP&A operating system for SaaS CFOs.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050810",
+  "theme_color": "#0B0F19",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["finance", "business"]
+}
