@@ -13,7 +13,7 @@ export function NewsletterSection() {
         </div>
         
         <h2 className="text-4xl md:text-5xl font-bold mb-8 tracking-tight">Stay on the Cutting Edge.</h2>
-        <p className="text-xl text-gray-400 mb-12 leading-relaxed">
+        <p className="text-xl text-white/70 mb-12 leading-relaxed">
           Join the thousands of forward-thinking CFOs receiving our technical breakdowns on autonomous financial planning.
         </p>
         
@@ -35,7 +35,7 @@ export function NewsletterSection() {
           </button>
         </form>
         
-        <p className="text-xs text-gray-600 mt-8 font-medium uppercase tracking-[0.2em]">
+        <p className="text-xs text-white/60 mt-8 font-medium uppercase tracking-[0.2em]">
           Architectural updates only. No marketing fluff.
         </p>
       </div>

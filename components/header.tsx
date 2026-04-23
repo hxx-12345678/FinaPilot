@@ -140,7 +140,7 @@ export function Header() {
              <FaviconLogo />
              <div className="flex flex-col">
                  <span className="text-xl font-bold text-white tracking-tight leading-none group-hover:text-accent transition-colors">FinaPilot</span>
-                 <span className="text-[9px] font-semibold text-white/40 tracking-wider uppercase mt-0.5">Financial Intelligence</span>
+                 <span className="text-[9px] font-semibold text-white/70 tracking-wider uppercase mt-0.5">Financial Intelligence</span>
              </div>
           </div>
 
@@ -154,7 +154,7 @@ export function Header() {
               >
                 <a 
                   href={getHref(item)} 
-                  className={`px-3 py-2 text-xs font-semibold uppercase tracking-wider rounded-lg transition-all ${activeDialog === item ? 'text-white bg-white/5' : 'text-white/50 hover:text-white'}`}
+                  className={`px-3 py-2 text-xs font-semibold uppercase tracking-wider rounded-lg transition-all ${activeDialog === item ? 'text-white bg-white/5' : 'text-white/80 hover:text-white'}`}
                 >
                   {item}
                 </a>
@@ -170,7 +170,7 @@ export function Header() {
                       <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-bl-full pointer-events-none" />
                       
                       <h4 className="text-sm font-bold text-white mb-1">{navDialogs[item].title}</h4>
-                      <p className="text-[11px] text-white/40 mb-4 leading-relaxed">{navDialogs[item].desc}</p>
+                      <p className="text-[11px] text-white/70 mb-4 leading-relaxed">{navDialogs[item].desc}</p>
                       
                       <div className={`${['Platform'].includes(item) ? 'grid grid-cols-2 gap-x-6 gap-y-3' : item === 'Agents' ? 'grid grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-3' : 'space-y-3'}`}>
                         {navDialogs[item].items.map((subItem, i) => (
@@ -180,7 +180,7 @@ export function Header() {
                             </div>
                             <div className="min-w-0">
                               <p className="text-xs font-semibold text-white leading-tight">{subItem.label}</p>
-                              <p className="text-[10px] text-white/40 mt-0.5 leading-snug">{subItem.desc}</p>
+                              <p className="text-[10px] text-white/70 mt-0.5 leading-snug">{subItem.desc}</p>
                             </div>
                           </div>
                         ))}
@@ -243,10 +243,10 @@ export function Header() {
                          <div className="w-6 h-6 rounded-md bg-white/5 flex items-center justify-center shrink-0 border border-white/10 mt-0.5">
                             <subItem.icon className="w-3 h-3 text-accent" />
                          </div>
-                         <div>
+                          <div>
                             <p className="text-xs font-semibold text-white leading-tight mb-0.5">{subItem.label}</p>
-                            <p className="text-[10px] text-white/50 leading-snug">{subItem.desc}</p>
-                         </div>
+                            <p className="text-[10px] text-white/70 leading-snug">{subItem.desc}</p>
+                          </div>
                       </div>
                     ))}
                     <div className="pt-2">

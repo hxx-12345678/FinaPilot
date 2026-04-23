@@ -44,7 +44,19 @@ export function Footer() {
         <div className="flex flex-col lg:flex-row items-start justify-between gap-16 lg:gap-12">
           {/* Left: Brand */}
           <div className="flex flex-col gap-6 max-w-sm">
-            <div className="flex items-center gap-4 group cursor-pointer" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
+            <div 
+              className="flex items-center gap-4 group cursor-pointer" 
+              onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  window.scrollTo({top: 0, behavior: 'smooth'});
+                }
+              }}
+              role="button"
+              tabIndex={0}
+              aria-label="Scroll to top"
+            >
                <FaviconLogo />
                <div className="flex flex-col">
                   <span className="text-2xl font-black text-white tracking-tighter leading-none group-hover:text-accent transition-colors">FINAPILOT</span>

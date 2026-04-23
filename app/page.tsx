@@ -16,7 +16,7 @@ const BenefitsSection = dynamic(() => import("@/components/benefits-section").th
 const FAQSection = dynamic(() => import("@/components/faq-section").then(mod => mod.FAQSection), { ssr: true })
 const FinalCTASection = dynamic(() => import("@/components/final-cta-section").then(mod => mod.FinalCTASection), { ssr: true })
 const Footer = dynamic(() => import("@/components/footer").then(mod => mod.Footer), { ssr: true })
-const HomePageStructuredData = dynamic(() => import("@/components/seo-structured-data").then(mod => mod.HomePageStructuredData), { ssr: false })
+import { HomePageStructuredData } from "@/components/seo-structured-data"
 
 export default function Home() {
   return (
