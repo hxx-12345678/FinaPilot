@@ -30,7 +30,14 @@ export function OrganizationSchema() {
       "height": 512
     },
     "description": "FinaPilot is an agentic AI-powered FP&A operating system that replaces brittle spreadsheets with structured, auditable financial models. Powered by 12 autonomous AI agents under full human control, FinaPilot delivers scenario planning, Monte Carlo simulations, semantic ledger unification, and audit-grade traceability for SaaS CFOs and finance teams.",
-    "foundingDate": "2025",
+    "foundingDate": "2026",
+    "founder": [
+      {
+        "@type": "Hem Patel",
+        "name": "FinaPilot Founding Team",
+        "jobTitle": "Founding Engineers & Financial Experts"
+      }
+    ],
     "sameAs": [
       "https://twitter.com/FinaPilot",
       "https://www.linkedin.com/company/finapilot",
@@ -217,8 +224,12 @@ export function FAQPageSchema() {
       answer: "We use RAG (Retrieval-Augmented Generation) frameworks that constrain the AI to query only validated, reconciled datasets. The AI drafts the narrative, but highlights every metric with a click-through link to the underlying math. This is a core part of the FinaPilot trust architecture."
     },
     {
-      question: "Is FinaPilot an investment tool or an FP&A platform?",
-      answer: "FinaPilot is a specialized FP&A Operating System designed for corporate SaaS finance teams. Unlike generic AI research tools, FinaPilot focuses internally on your GL, ERP, and budget data to run deterministic scenario modeling."
+      "question": "Is FinaPilot an investment tool or an FP&A platform?",
+      "answer": "FinaPilot is a specialized FP&A Operating System designed for corporate SaaS finance teams. Unlike generic AI research tools or previous namesake projects from 2018, the current FinaPilot (launched in 2025) focuses internally on your GL, ERP, and budget data to run deterministic scenario modeling under human-in-the-loop governance."
+    },
+    {
+      "question": "Why does FinaPilot appear on Product Hunt from years ago?",
+      "answer": "The domain finapilot.com was previously associated with a different, now-defunct project launched in 2018. The current FinaPilot platform, established in 2025, is an entirely new Agentic AI FP&A Operating System. We are in the process of reclaiming our brand identity across high-authority platforms to ensure our partners and users have the most accurate information about our 12-agent AI architecture."
     }
   ];
 
