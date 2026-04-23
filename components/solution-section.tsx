@@ -63,7 +63,7 @@ export function SolutionSection() {
           <h2 className={`text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight leading-tight transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             FinaPilot replaces spreadsheets with <span className="text-gradient-accent">structured financial models.</span>
           </h2>
-          <p className={`text-base sm:text-lg text-white/50 max-w-3xl mx-auto leading-relaxed transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <p className={`text-base sm:text-lg text-white/70 max-w-3xl mx-auto leading-relaxed transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             No broken formulas. No black box AI. Just clean, auditable financial logic — powered by 12 AI agents under your full control.
           </p>
         </div>
@@ -74,7 +74,7 @@ export function SolutionSection() {
             {outcomes.map((outcome, i) => (
               <div key={i} className="flex items-start gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-accent shrink-0 mt-0.5" />
-                <span className="text-sm text-white/60 font-medium leading-relaxed">{outcome}</span>
+                <span className="text-sm text-white/75 font-medium leading-relaxed">{outcome}</span>
               </div>
             ))}
           </div>

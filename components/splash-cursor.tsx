@@ -20,22 +20,31 @@ function SplashCursor({
 }) {
   const canvasRef = useRef(null);
   const animationFrameId = useRef(null);
+  const observerRef = useRef(null);
+  const isInView = useRef(true);
 
   // ═══ PERFORMANCE KILL-SWITCH (Solves 28s TBT on Mobile) ═══
   const isServer = typeof window === 'undefined';
-  const isSmallScreen = !isServer && window.innerWidth < 768;
+  const isSmallScreen = !isServer && window.innerWidth < 1024; // Expanded to tablets
 
   useEffect(() => {
-    // 1. Mobile Protection: WebGL on weak devices is the root cause of high TBT.
     if (isSmallScreen) return;
 
     let isActive = true;
     let timer;
 
-    // 2. Main-Thread Protection: Ensure critical rendering path is clear.
+    // Intersection Observer to stop simulation when out of view
+    observerRef.current = new IntersectionObserver((entries) => {
+      isInView.current = entries[0].isIntersecting;
+    }, { threshold: 0.1 });
+
+    if (canvasRef.current) {
+      observerRef.current.observe(canvasRef.current.parentElement);
+    }
+
     timer = setTimeout(() => {
       startFluidSimulation();
-    }, 2000);
+    }, 2500); // Increased delay for desktop safety
 
     function startFluidSimulation() {
       const canvas = canvasRef.current;
@@ -695,10 +704,15 @@ function SplashCursor({
         if (!isActive) return;
         const dt = calcDeltaTime();
         if (resizeCanvas()) initFramebuffers();
-        updateColors(dt);
-        applyInputs();
-        step(dt);
-        render(null);
+        
+        // Performance optimization: Only update if in view
+        if (isInView.current) {
+          updateColors(dt);
+          applyInputs();
+          step(dt);
+          render(null);
+        }
+        
         animationFrameId.current = requestAnimationFrame(updateFrame);
       }
 
@@ -1046,6 +1060,9 @@ function SplashCursor({
           cancelAnimationFrame(animationFrameId.current);
           animationFrameId.current = null;
         }
+        if (observerRef.current) {
+          observerRef.current.disconnect();
+        }
         window.removeEventListener('mousedown', handleMouseDown);
         window.removeEventListener('mousemove', handleMouseMove);
         window.removeEventListener('touchstart', handleTouchStart);
@@ -1057,6 +1074,7 @@ function SplashCursor({
     return () => {
       isActive = false;
       clearTimeout(timer);
+      if (observerRef.current) observerRef.current.disconnect();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isSmallScreen]);

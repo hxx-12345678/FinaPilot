@@ -107,7 +107,7 @@ export function AgenticSection() {
                 12 Autonomous Agents to compound your finance team's output.<br/>
                 <span className="text-white/50 text-2xl sm:text-3xl block mt-2">Zero loss of control.</span>
              </h2>
-             <p className="text-base sm:text-lg text-white/50 max-w-2xl mx-auto leading-relaxed">
+             <p className="text-base sm:text-lg text-white/75 max-w-2xl mx-auto leading-relaxed">
                 Each agent handles a specific finance task — analyzing, forecasting, and flagging issues at machine speed. <a href="/features" className="text-white font-semibold underline decoration-accent/30 hover:decoration-accent transition-all">Explore the full agent architecture and capabilities</a>.
              </p>
           </div>
@@ -130,7 +130,7 @@ export function AgenticSection() {
                  </div>
                  
                  <h3 className="text-sm font-bold text-white mb-1.5 leading-tight relative z-10 group-hover:text-accent transition-colors duration-500">{agent.title}</h3>
-                 <p className="text-xs text-white/45 leading-relaxed relative z-10 group-hover:text-white/70 transition-colors duration-500">
+                 <p className="text-xs text-white/70 leading-relaxed relative z-10 group-hover:text-white/80 transition-colors duration-500">
                    {agent.desc}
                  </p>
                </div>

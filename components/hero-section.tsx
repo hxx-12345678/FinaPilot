@@ -61,15 +61,10 @@ export function HeroSection() {
             Now accepting Design Partners — 10 spots available
           </div>
 
-          {/* SEO H1 — Always visible to crawlers, contains all target keywords */}
-          <h1 className="sr-only">
-            FinaPilot: Agentic AI FP&A OS — AI-Powered Financial Planning, Scenario Modeling & Monte Carlo Simulations for SaaS CFOs
-          </h1>
-
-          {/* ANIMATED HEADLINE (visual only — H1 is above for SEO) */}
-          <div className="min-h-[140px] sm:min-h-[180px] mb-6 relative flex items-center justify-center" role="presentation" aria-hidden="true">
+          {/* SEMANTIC H1 HEADLINE (Combines SEO with Visuals) */}
+          <h1 className="min-h-[140px] sm:min-h-[180px] mb-6 relative flex items-center justify-center">
             {headlines.map((headline, i) => (
-              <div 
+              <span 
                 key={i}
                 className={`absolute w-full text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight leading-[1.1] transition-all duration-1000 ${
                   headlineIndex === i 
@@ -78,9 +73,9 @@ export function HeroSection() {
                 }`}
               >
                 {headline}
-              </div>
+              </span>
             ))}
-          </div>
+          </h1>
 
           {/* SUBHEADLINE — contains secondary keywords naturally */}
           <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-4xl mx-auto leading-relaxed mb-4">
@@ -100,13 +95,20 @@ export function HeroSection() {
               Apply to Become a Founding Design Partner
               <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <div className="flex flex-col text-left">
-              <p className="text-sm text-white/90 font-bold mb-1">
-                We’ll rebuild your financial model with you.
-              </p>
-              <p className="text-xs text-white/70 font-medium">
-                Limited to 10 teams.
-              </p>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-center gap-6 text-white/40 text-[10px] font-bold uppercase tracking-widest">
+            <div className="flex items-center gap-2">
+               <Shield className="w-3.5 h-3.5" />
+               <span>SOC 2 Ready Architecture</span>
+            </div>
+            <div className="flex items-center gap-2">
+               <Zap className="w-3.5 h-3.5 text-accent" />
+               <span>10,000+ Scenarios / Sec</span>
+            </div>
+            <div className="flex items-center gap-2">
+               <Brain className="w-3.5 h-3.5" />
+               <span>12 AI Finance Agents</span>
             </div>
           </div>
         </div>

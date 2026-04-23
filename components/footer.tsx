@@ -77,9 +77,9 @@ export function Footer() {
             <div>
               <p className="text-[11px] font-black text-white uppercase tracking-[0.2em] mb-6">Product</p>
               <ul className="space-y-4">
-                <li><a href="/faq" className="text-xs text-white/40 hover:text-accent transition-colors font-bold uppercase tracking-widest">FAQ</a></li>
-                <li><a href="/ai-finance-tools" className="text-xs text-white/40 hover:text-accent transition-colors font-bold uppercase tracking-widest">AI Comparison</a></li>
-                <li><a href="/#integrations" className="text-xs text-white/40 hover:text-accent transition-colors font-bold uppercase tracking-widest">Integrations</a></li>
+                <li><a href="/faq" className="text-xs text-white/70 hover:text-accent transition-colors font-bold uppercase tracking-widest">FAQ</a></li>
+                <li><a href="/ai-finance-tools" className="text-xs text-white/70 hover:text-accent transition-colors font-bold uppercase tracking-widest">AI Comparison</a></li>
+                <li><a href="/#integrations" className="text-xs text-white/70 hover:text-accent transition-colors font-bold uppercase tracking-widest">Integrations</a></li>
               </ul>
             </div>
             <div>
@@ -105,10 +105,10 @@ export function Footer() {
           <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
             <a href="/" className="text-[11px] text-white/60 hover:text-white transition-colors font-bold uppercase tracking-widest cursor-pointer">© {currentYear} FinaPilot</a>
             <div className="flex items-center gap-6">
-              <a href="/privacy" className="text-[11px] text-white/60 hover:text-white transition-colors font-black tracking-tighter">PRIVACY</a>
-              <a href="/terms" className="text-[11px] text-white/60 hover:text-white transition-colors font-black tracking-tighter">TERMS</a>
-              <a href="mailto:founder@finapilot.com" className="text-[11px] text-white/60 hover:text-accent transition-colors font-black tracking-tighter">FOUNDER</a>
-              <a href="mailto:support@finapilot.com" className="text-[11px] text-white/60 hover:text-accent transition-colors font-black tracking-tighter">SUPPORT</a>
+              <a href="/privacy" className="text-[11px] text-white/80 hover:text-white transition-colors font-black tracking-tighter">PRIVACY</a>
+              <a href="/terms" className="text-[11px] text-white/80 hover:text-white transition-colors font-black tracking-tighter">TERMS</a>
+              <a href="mailto:founder@finapilot.com" className="text-[11px] text-white/80 hover:text-accent transition-colors font-black tracking-tighter">FOUNDER</a>
+              <a href="mailto:support@finapilot.com" className="text-[11px] text-white/80 hover:text-accent transition-colors font-black tracking-tighter">SUPPORT</a>
             </div>
           </div>
 
