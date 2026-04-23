@@ -52,7 +52,7 @@ export function ProblemSection() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-5 tracking-tight">
             Stop fighting spreadsheets. Move to <span className="text-accent underline decoration-red-400">SOC 2 architecture ready</span> finance logic.
           </h2>
-          <p className="text-base sm:text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed">
             You can't run a modern company on brittle spreadsheets. The cost of one formula error or one delayed forecast is too high.
           </p>
         </div>
@@ -74,7 +74,7 @@ export function ProblemSection() {
               </div>
               
               <h3 className="text-base font-bold text-white mb-2.5 leading-snug">{problem.title}</h3>
-              <p className="text-sm text-white/50 mb-8 leading-relaxed">
+              <p className="text-sm text-white/70 mb-8 leading-relaxed">
                 Generic AI tools hallucinate numbers without proof. <a href="/ai-finance-tools" className="text-white hover:text-red-400 font-semibold underline decoration-red-500/30 transition-all">Learn the difference between chatbots and deterministic finance tools</a>.
               </p>
               

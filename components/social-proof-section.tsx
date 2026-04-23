@@ -61,7 +61,7 @@ export function SocialProofSection() {
              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-5 tracking-tight">
                 Built for teams that can't afford <span className="text-gradient-accent">guesswork.</span>
              </h2>
-             <p className="text-base sm:text-lg text-white/50 max-w-2xl mx-auto leading-relaxed">
+             <p className="text-base sm:text-lg text-white/75 max-w-2xl mx-auto leading-relaxed">
                 The shift from spreadsheets to AI-powered finance is happening now. But only solutions that combine speed with full transparency will earn CFO trust.
              </p>
 
@@ -80,7 +80,7 @@ export function SocialProofSection() {
                      <div className="text-3xl sm:text-4xl font-black text-white mb-2 tracking-tight leading-none group-hover:text-accent transition-colors">
                         {stat.value}
                      </div>
-                     <p className="text-sm text-white/60 leading-snug font-medium mb-5">
+                     <p className="text-sm text-white/80 leading-snug font-medium mb-5">
                        {stat.label}
                      </p>
                      <div className="pt-4 border-t border-white/5 flex items-center justify-between">
@@ -100,7 +100,7 @@ export function SocialProofSection() {
                     <point.icon className="w-6 h-6 text-accent" />
                   </div>
                   <h3 className="text-lg font-bold text-white mb-2">{point.title}</h3>
-                  <p className="text-sm text-white/50 leading-relaxed">{point.desc}</p>
+                  <p className="text-sm text-white/70 leading-relaxed">{point.desc}</p>
                </div>
              ))}
           </div>

@@ -3,9 +3,11 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { CheckCircle2, ArrowRight, Shield, Zap, TrendingUp, Users, FileSpreadsheet, Brain, XCircle } from "lucide-react"
+import dynamic from "next/dynamic"
 import { useCalendly } from "@/components/calendly-provider"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
-import SplashCursor from "@/components/splash-cursor"
+
+const SplashCursor = dynamic(() => import("@/components/splash-cursor"), { ssr: false })
 
 export function HeroSection() {
   const { openCalendly } = useCalendly()
@@ -48,7 +50,7 @@ export function HeroSection() {
       <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0B0F19] to-transparent z-10" />
 
       <div className="max-w-6xl mx-auto text-center relative z-20">
-        <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
+        <div>
           
           {/* Simple Trust Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-xs font-semibold text-white/70 mb-8">
@@ -81,7 +83,7 @@ export function HeroSection() {
           </div>
 
           {/* SUBHEADLINE — contains secondary keywords naturally */}
-          <p className="text-base sm:text-lg md:text-xl text-white/60 max-w-4xl mx-auto leading-relaxed mb-4">
+          <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-4xl mx-auto leading-relaxed mb-4">
             Stop fighting brittle spreadsheets. FinaPilot helps finance teams rebuild their models with <span className="text-white font-semibold">SOC 2 architecture ready security</span>, run forecasts instantly, and generate board-ready reports — with full audit traceability.
           </p>
           <p className="text-sm sm:text-base text-accent font-semibold mb-10">
@@ -99,10 +101,10 @@ export function HeroSection() {
               <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Button>
             <div className="flex flex-col text-left">
-              <p className="text-sm text-white/80 font-bold mb-1">
+              <p className="text-sm text-white/90 font-bold mb-1">
                 We’ll rebuild your financial model with you.
               </p>
-              <p className="text-xs text-white/40 font-medium">
+              <p className="text-xs text-white/70 font-medium">
                 Limited to 10 teams.
               </p>
             </div>

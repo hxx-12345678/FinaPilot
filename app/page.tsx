@@ -1,20 +1,22 @@
+import dynamic from "next/dynamic"
 import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
-import { AgenticSection } from "@/components/agentic-section"
-import { SimulatorWidget } from "@/components/simulator-widget"
-import { ProblemSection } from "@/components/problem-section"
-import { SolutionSection } from "@/components/solution-section"
-import { RoleDeepDive } from "@/components/role-deep-dive"
-import { IntegrationsSection } from "@/components/integrations-section"
-import { HowItWorksSection } from "@/components/how-it-works-section"
-import { CapabilitiesSection } from "@/components/capabilities-section"
-import { SocialProofSection } from "@/components/social-proof-section"
-import { ProgramSection } from "@/components/program-section"
-import { BenefitsSection } from "@/components/benefits-section"
-import { FAQSection } from "@/components/faq-section"
-import { FinalCTASection } from "@/components/final-cta-section"
-import { Footer } from "@/components/footer"
-import { HomePageStructuredData } from "@/components/seo-structured-data"
+
+// ═══ LAZY LOAD BELOW-THE-FOLD SECTIONS (Improves TBT & FCP) ═══
+const SocialProofSection = dynamic(() => import("@/components/social-proof-section").then(mod => mod.SocialProofSection), { ssr: true })
+const ProblemSection = dynamic(() => import("@/components/problem-section").then(mod => mod.ProblemSection), { ssr: true })
+const SolutionSection = dynamic(() => import("@/components/solution-section").then(mod => mod.SolutionSection), { ssr: true })
+const AgenticSection = dynamic(() => import("@/components/agentic-section").then(mod => mod.AgenticSection), { ssr: true })
+const RoleDeepDive = dynamic(() => import("@/components/role-deep-dive").then(mod => mod.RoleDeepDive), { ssr: true })
+const IntegrationsSection = dynamic(() => import("@/components/integrations-section").then(mod => mod.IntegrationsSection), { ssr: true })
+const HowItWorksSection = dynamic(() => import("@/components/how-it-works-section").then(mod => mod.HowItWorksSection), { ssr: true })
+const CapabilitiesSection = dynamic(() => import("@/components/capabilities-section").then(mod => mod.CapabilitiesSection), { ssr: true })
+const ProgramSection = dynamic(() => import("@/components/program-section").then(mod => mod.ProgramSection), { ssr: true })
+const BenefitsSection = dynamic(() => import("@/components/benefits-section").then(mod => mod.BenefitsSection), { ssr: true })
+const FAQSection = dynamic(() => import("@/components/faq-section").then(mod => mod.FAQSection), { ssr: true })
+const FinalCTASection = dynamic(() => import("@/components/final-cta-section").then(mod => mod.FinalCTASection), { ssr: true })
+const Footer = dynamic(() => import("@/components/footer").then(mod => mod.Footer), { ssr: true })
+const HomePageStructuredData = dynamic(() => import("@/components/seo-structured-data").then(mod => mod.HomePageStructuredData), { ssr: false })
 
 export default function Home() {
   return (
