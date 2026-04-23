@@ -20,6 +20,7 @@ export function OrganizationSchema() {
     "@type": "Organization",
     "@id": "https://www.finapilot.com/#organization",
     "name": "FinaPilot",
+    "legalName": "FinaPilot Inc.",
     "alternateName": ["Fina Pilot", "FinaPilot AI", "FinaPilot FP&A"],
     "url": "https://www.finapilot.com",
     "logo": {
@@ -69,8 +70,7 @@ export function OrganizationSchema() {
       "Agentic Finance Operating System",
       "DCF Modeling",
       "LBO Modeling"
-    ],
-    "keywords": "Agentic FP&A, AI CFO, FinaPilot, Financial Planning, Financial Intelligence OS"
+    ]
   };
 
   return (
@@ -129,13 +129,6 @@ export function SoftwareApplicationSchema() {
     "creator": {
       "@type": "Organization",
       "@id": "https://www.finapilot.com/#organization"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "ratingCount": "10",
-      "bestRating": "5",
-      "worstRating": "1"
     }
   };
 

@@ -38,50 +38,18 @@ export const metadata: Metadata = {
   description:
     "FinaPilot is the agentic AI-powered FP&A operating system for SaaS CFOs. Replace brittle spreadsheets with structured, auditable financial models. 12 autonomous AI agents for scenario planning, Monte Carlo simulations, semantic ledger, investor dashboards, and audit-grade traceability — all under full human control. Join the Design Partner Program.",
   keywords: [
-    // Brand keywords (own 100%)
     "FinaPilot",
     "FinaPilot FP&A",
-    "FinaPilot AI CFO",
-    "FinaPilot demo",
-    "FinaPilot pricing",
-    "FinaPilot AI",
-    "FinaPilot financial planning",
-    // Agentic AI (emerging, low competition)
-    "agentic FP&A",
+    "Agentic AI FP&A",
     "AI CFO agent",
-    "multi-agent FP&A",
-    "autonomous FP&A",
-    "AI FP&A orchestration",
-    "agentic AI financial modeling",
-    // Technical edge (very low competition)
-    "semantic ledger FP&A",
-    "DAG financial modeling",
-    "Monte Carlo FP&A tool",
-    "provenance audit finance",
-    "audit-grade traceability",
-    // Pain point keywords (high volume)
-    "AI FP&A",
-    "AI financial modeling",
-    "Excel FP&A replacement",
+    "autonomous financial modeling",
     "SaaS runway forecasting",
-    "real-time what-if analysis",
-    "investor deck automation",
-    "budget vs actual AI",
-    // Category keywords
-    "AI financial planning software",
-    "FP&A automation tool",
-    "AI-powered financial planning",
-    "financial scenario planning software",
-    "Monte Carlo simulation finance",
-    "AI finance platform",
-    "CFO AI tools",
-    "financial modeling AI",
-    "SaaS financial modeling",
-    // Comparison keywords
-    "AI FP&A vs Excel",
-    "FP&A variance analysis tool",
-    "headcount optimization AI",
-    "cash flow forecasting AI",
+    "AI scenario planning",
+    "Monte Carlo finance AI",
+    "audit-grade financial traceability",
+    "semantic ledger software",
+    "FinaPilot demo",
+    "SaaS CFO tools"
   ],
 
   // ─── Authorship & Generator ───
@@ -147,7 +115,9 @@ export const metadata: Metadata = {
 
   // ─── Verification (for Google Search Console + Bing) ───
   verification: {
-    google: "google-site-verification-placeholder",
+    // CRITICAL: Replace these placeholders with your actual verification codes from 
+    // Google Search Console and Bing Webmaster Tools to restore your ranking access.
+    google: "google-site-verification-placeholder", 
     yandex: "yandex-verification-placeholder",
     other: { 
       "msvalidate.01": "msvalidate-placeholder",
@@ -190,9 +160,9 @@ export const metadata: Metadata = {
     "apple-mobile-web-app-title": "FinaPilot",
     "msapplication-TileColor": "#0B0F19",
     "format-detection": "telephone=no",
+    // Ensuring visibility across Edge (Bing) and Safari (DuckDuckGo/Siri)
+    "bingbot": "index, follow, max-snippet:-1, max-image-preview:large",
     "slurp": "index, follow",
-    "duckduckbot": "index, follow",
-    "bingbot": "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1",
   },
 }
 
