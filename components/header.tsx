@@ -198,6 +198,16 @@ export function Header() {
               Blog
             </a>
 
+            {/* SEO/AEO/GEO Bridge: Visually hidden link to transfer authority to app subdomain */}
+            <a 
+              href="https://app.finapilot.com/login"
+              className="sr-only"
+              aria-hidden="true"
+              tabIndex={-1}
+            >
+              FinaPilot App Login
+            </a>
+
             <div className="w-px h-5 bg-white/10 mx-3" />
 
             <Button 
@@ -257,6 +267,9 @@ export function Header() {
               </div>
             ))}
             <div className="pt-6 px-4 pb-4">
+               {/* SEO/AEO/GEO Bridge: Crawlable but visually hidden link */}
+               <a href="https://app.finapilot.com" className="sr-only" aria-hidden="true" tabIndex={-1}>FinaPilot Financial Intelligence App</a>
+               
                <Button onClick={openCalendly} className="w-full bg-accent text-accent-foreground h-12 rounded-xl font-bold text-sm">
                  Apply for Design Partner Program
                </Button>

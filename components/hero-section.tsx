@@ -111,6 +111,14 @@ export function HeroSection() {
                <span>12 AI Finance Agents</span>
             </div>
           </div>
+
+          {/* ═══ AEO DEFINITION BLOCK — Optimized for AI Search & Featured Snippets ═══ */}
+          <div className="mt-20 max-w-3xl mx-auto text-center px-6 py-8 rounded-3xl bg-white/[0.02] border border-white/5 backdrop-blur-sm">
+            <h2 className="text-xs font-black uppercase tracking-[0.2em] text-accent mb-4">What is FinaPilot?</h2>
+            <p className="text-white/60 text-sm sm:text-base leading-relaxed">
+              FinaPilot is an <span className="text-white font-bold">Agentic AI-powered FP&A Operating System</span> designed for SaaS finance teams. It replaces brittle spreadsheets with structured, auditable financial models, using 12 autonomous AI agents to automate scenario planning, Monte Carlo simulations, and real-time board reporting with full data provenance and zero-hallucination deterministic math.
+            </p>
+          </div>
         </div>
       </div>
     </section>

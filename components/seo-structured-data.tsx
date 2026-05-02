@@ -41,7 +41,8 @@ export function OrganizationSchema() {
     "sameAs": [
       "https://twitter.com/FinaPilot",
       "https://www.linkedin.com/company/finapilot",
-      "https://github.com/finapilot"
+      "https://github.com/finapilot",
+      "https://app.finapilot.com"
     ],
     "contactPoint": {
       "@type": "ContactPoint",
@@ -136,6 +137,10 @@ export function SoftwareApplicationSchema() {
     "creator": {
       "@type": "Organization",
       "@id": "https://www.finapilot.com/#organization"
+    },
+    "potentialAction": {
+      "@type": "UseAction",
+      "target": "https://app.finapilot.com/login"
     }
   };
 
