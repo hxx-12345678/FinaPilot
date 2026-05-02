@@ -1,0 +1,6 @@
+# Cloudflare Pages Redirects
+# Canonical redirect: Root to WWW
+https://finapilot.com/* https://www.finapilot.com/:splat 301
+
+# Fallback for SPA routing if needed
+/* /index.html 200
