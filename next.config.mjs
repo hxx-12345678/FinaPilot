@@ -3,64 +3,15 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  output: 'export',
+  trailingSlash: true,
   images: {
     unoptimized: true,
   },
-
-  // ═══ SEO: Security Headers (improves Google trust signals + Core Web Vitals) ═══
-  async headers() {
-    return [
-      {
-        source: '/(.*)',
-        headers: [
-          // Security headers (Google rewards secure sites)
-          {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff',
-          },
-          {
-            key: 'X-Frame-Options',
-            value: 'DENY',
-          },
-          {
-            key: 'X-XSS-Protection',
-            value: '1; mode=block',
-          },
-          {
-            key: 'Referrer-Policy',
-            value: 'strict-origin-when-cross-origin',
-          },
-          {
-            key: 'Permissions-Policy',
-            value: 'camera=(), microphone=(), geolocation=()',
-          },
-          // Strict Transport Security (HSTS)
-          {
-            key: 'Strict-Transport-Security',
-            value: 'max-age=31536000; includeSubDomains; preload',
-          },
-        ],
-      },
-    ]
-  },
-
-  // ═══ SEO: Canonical redirect (www → non-www or vice versa) ═══
-  async redirects() {
-    return [
-      // Redirect non-www to www (canonical domain)
-      {
-        source: '/:path*',
-        has: [
-          {
-            type: 'host',
-            value: 'finapilot.com',
-          },
-        ],
-        destination: 'https://www.finapilot.com/:path*',
-        permanent: true,
-      },
-    ]
-  },
+  /* 
+   * headers() and redirects() are not supported with output: 'export'.
+   * These have been moved to public/_headers and public/_redirects for Cloudflare Pages.
+   */
 }
 
 export default nextConfig
