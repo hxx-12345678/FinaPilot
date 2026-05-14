@@ -22,13 +22,12 @@ export default function Home() {
   return (
     <>
       {/* ═══ JSON-LD Structured Data (AEO + Technical SEO) ═══ */}
-      {/* Injects Organization, SoftwareApplication, WebSite, FAQPage, and BreadcrumbList schemas */}
       <HomePageStructuredData />
 
       <main className="min-h-screen bg-[#0B0F19] overflow-x-hidden max-w-full relative" role="main" itemScope itemType="https://schema.org/WebPage">
         {/* Invisible semantic metadata for search engines */}
-        <meta itemProp="name" content="FinaPilot — Agentic AI FP&A OS for SaaS CFOs" />
-        <meta itemProp="description" content="Replace brittle spreadsheets with structured, auditable financial models powered by 12 autonomous AI agents. Scenario planning, Monte Carlo simulations, semantic ledger, and audit-grade traceability." />
+        <meta itemProp="name" content="FinaPilot — Enterprise Agentic AI FP&A Operating System" />
+        <meta itemProp="description" content="The institutional alternative to Anaplan and Pigment. Scale beyond spreadsheets with structured, auditable financial models powered by 12 autonomous AI agents." />
         <meta itemProp="url" content="https://www.finapilot.com" />
 
         <Header />

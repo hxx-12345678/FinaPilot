@@ -6,32 +6,28 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 
 const faqs = [
   {
-    question: "We don't trust AI for financial decisions. How does FinaPilot handle this?",
-    answer: "We built FinaPilot with this exact concern in mind. Core financial calculations use deterministic math — not LLMs. AI agents help with analysis, anomaly detection, and report drafting, but every output requires human approval. Your team reviews, validates, and signs off before anything goes to a board or investor. The AI suggests — your CFO decides."
+    question: "Why should an Enterprise move from Anaplan or Pigment to FinaPilot?",
+    answer: "Legacy enterprise tools like Anaplan require months of custom scripting and expensive consultants for even basic changes. FinaPilot is an active orchestration engine that deploys in days, using 12 autonomous AI agents to rebuild your financial logic into a structured, real-time environment. We offer 4ms recalculation speeds and DAG-backed data provenance that ensures 100% accuracy without the 'black box' calculations of legacy systems."
   },
   {
-    question: "What is the Design Partner Program?",
-    answer: "We're working with 10 selected finance teams to co-build FinaPilot. As a design partner, we rebuild your financial model inside our platform, configure all 12 AI agents for your specific workflows, and give you direct access to our founders. In return, you provide feedback that helps us build a better product. Pricing is discussed during the intro call based on your team size and model complexity."
+    question: "How does FinaPilot solve the AI 'Hallucination' problem in finance?",
+    answer: "We decouple cognitive orchestration from financial computation. While we use LLMs to understand intent and automate workflows, all financial logic is executed on a deterministic, Directed Acyclic Graph (DAG) engine. This ensures that every calculation is mathematically rigid and follows immutable laws of accounting — zero probabilistic guessing."
   },
   {
-    question: "How does FinaPilot protect our financial data?",
-    answer: "All data is encrypted with AES-256 at rest and TLS 1.3 in transit. We use isolated tenant architecture — your data is never mixed with other customers. We maintain role-based access control, immutable audit logs, and are GDPR-ready. We never train AI models on your financial data."
+    question: "Does FinaPilot support global multi-entity and multi-currency consolidations?",
+    answer: "Yes. FinaPilot is architected for enterprise scale. Our Semantic Ledger unifies data from disparate global ERPs (SAP, Oracle, NetSuite) into a single, object-oriented schema. We handle complex multi-currency translation, intercompany eliminations, and regional variance attribution automatically."
   },
   {
-    question: "What do the 12 AI agents actually do?",
-    answer: "Each agent handles a specific finance task: the Risk Agent stress-tests your assumptions against macroeconomic scenarios, the Variance Agent explains plan-vs-actual deviations with mathematical attribution, the Reporting Agent drafts board narratives, the Forecasting Agent runs Monte Carlo simulations, and so on. They work at machine speed but cannot execute any changes without your team's explicit approval."
+    question: "How does the 'Institutional Provenance' agent work for audits?",
+    answer: "Every cell in a FinaPilot model contains its own 'DNA'—a complete lineage map. During an audit, you can click any figure in a board report and see exactly which ERP transaction, assumption change, or manual override created that number. This DAG-backed traceability is designed for SOC 2 Type II environments."
   },
   {
-    question: "Can you migrate our complex Excel models?",
-    answer: "Yes — that's a core part of the Design Partner Program. Our team leads the migration process. We handle multi-sheet 3-statement models, resolve circular references (like interest expense on revolving debt), and ensure your financial logic transfers accurately. You provide the knowledge; we handle the technical migration."
+    question: "What is the role of the 12 AI agents in a human-led finance team?",
+    answer: "The agents are force multipliers, not replacements. They handle the low-level 'grunt work'—data normalization, anomaly detection, variance drafting, and Monte Carlo simulations. The finance team remains the 'Human-in-the-Loop,' reviewing and approving every strategic output before it reaches the board."
   },
   {
-    question: "How is FinaPilot different from Anaplan or Adaptive Planning?",
-    answer: "Legacy enterprise tools require months of implementation, custom scripting, and expensive consultants. FinaPilot is built for modern finance teams that want speed without sacrificing transparency. We recalculate full models in under 4ms, run 10,000+ Monte Carlo scenarios instantly, and provide cell-level audit trails — all with AI assistance that stays under human control. During the pilot, we do the implementation work with you."
-  },
-  {
-    question: "Can FinaPilot improve our current system, not just replace Excel?",
-    answer: "Absolutely. Many Design Partners use FinaPilot alongside their existing tools. Our 12 AI agents can layer on top of your current workflows — adding real-time anomaly detection, automated variance analysis, scenario planning, and board reporting. The goal is to make your existing finance function faster and more accurate, whether you're replacing spreadsheets entirely or augmenting what you already have."
+    question: "Can we migrate our existing legacy models without losing logic?",
+    answer: "Absolutely. A core part of our Enterprise Partner Program is white-glove migration. Our engineers and financial experts map your exact multidimensional logic into FinaPilot's atomic architecture, resolving circularities and improving model performance by orders of magnitude during the process."
   }
 ]
 
@@ -50,7 +46,7 @@ export function FAQSection() {
             Frequently Asked <span className="text-gradient-accent">Questions</span>
           </h2>
           <p className="text-base text-white/50">
-            Honest answers about how FinaPilot works, the Design Partner Program, and data security. <a href="/faq" className="text-white font-semibold underline decoration-accent/30 hover:decoration-accent transition-all">Explore our full technical knowledge base</a>.
+            Institutional answers about FinaPilot's agentic architecture, enterprise scalability, and deterministic math. <a href="/faq" className="text-white font-semibold underline decoration-accent/30 hover:decoration-accent transition-all">Explore our full technical knowledge base</a>.
           </p>
         </div>
 

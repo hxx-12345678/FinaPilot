@@ -32,24 +32,24 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   // ─── Core Meta ───
   title: {
-    default: "FinaPilot | Agentic AI FP&A OS — AI-Powered Financial Planning for SaaS CFOs",
-    template: "%s | FinaPilot — Agentic AI FP&A Platform",
+    default: "FinaPilot | Enterprise Agentic AI FP&A OS — The Institutional Alternative to Anaplan & Pigment",
+    template: "%s | FinaPilot — Enterprise Agentic FP&A Platform",
   },
   description:
-    "FinaPilot is the agentic AI-powered FP&A operating system for SaaS CFOs. Replace brittle spreadsheets with structured, auditable financial models. 12 autonomous AI agents for scenario planning, Monte Carlo simulations, semantic ledger, investor dashboards, and audit-grade traceability — all under full human control. Join the Design Partner Program.",
+    "FinaPilot is an enterprise-grade Agentic AI FP&A operating system designed for global finance teams. Built on a deterministic, DAG-backed cell lineage engine, it replaces legacy multidimensional modeling tools like Anaplan and Pigment with autonomous AI orchestration, 4ms recalculations, and institutional-grade audit traceability.",
   keywords: [
     "FinaPilot",
-    "FinaPilot FP&A",
-    "Agentic AI FP&A",
-    "AI CFO agent",
-    "autonomous financial modeling",
-    "SaaS runway forecasting",
-    "AI scenario planning",
-    "Monte Carlo finance AI",
-    "audit-grade financial traceability",
-    "semantic ledger software",
-    "FinaPilot demo",
-    "SaaS CFO tools"
+    "Enterprise FP&A Software",
+    "Anaplan alternative",
+    "Pigment alternative",
+    "Agentic AI Finance",
+    "Deterministic Financial Modeling",
+    "Global Entity Consolidation",
+    "Multidimensional Modeling AI",
+    "Institutional Financial Traceability",
+    "SaaS CFO tools",
+    "CFO Operating System",
+    "FP&A AI Agents"
   ],
 
   // ─── Authorship & Generator ───
@@ -74,9 +74,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://www.finapilot.com",
     siteName: "FinaPilot",
-    title: "FinaPilot | Agentic AI FP&A OS — Replace Spreadsheets with Auditable AI Finance",
+    title: "FinaPilot | Enterprise Agentic AI FP&A OS — The Institutional Alternative to Anaplan & Pigment",
     description:
-      "12 autonomous AI agents for scenario planning, Monte Carlo simulations, semantic ledger, and audit-grade traceability. Built for SaaS CFOs who can't afford guesswork. Design Partner Program — limited to 10 teams.",
+      "12 autonomous AI agents for multidimensional scenario planning, Monte Carlo risk assessment, and institutional-grade audit traceability. Built for global finance teams requiring zero-hallucination deterministic math. Scale beyond legacy modeling.",
     images: [
       {
         url: "/icon.svg",
@@ -103,7 +103,7 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-    nocache: false,
+    nocache: true,
     googleBot: {
       index: true,
       follow: true,
