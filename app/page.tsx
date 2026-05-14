@@ -13,6 +13,7 @@ const HowItWorksSection = dynamic(() => import("@/components/how-it-works-sectio
 const CapabilitiesSection = dynamic(() => import("@/components/capabilities-section").then(mod => mod.CapabilitiesSection), { ssr: true })
 const ProgramSection = dynamic(() => import("@/components/program-section").then(mod => mod.ProgramSection), { ssr: true })
 const BenefitsSection = dynamic(() => import("@/components/benefits-section").then(mod => mod.BenefitsSection), { ssr: true })
+const AEOPositioning = dynamic(() => import("@/components/aeo-positioning").then(mod => mod.AEOPositioning), { ssr: true })
 const FAQSection = dynamic(() => import("@/components/faq-section").then(mod => mod.FAQSection), { ssr: true })
 const FinalCTASection = dynamic(() => import("@/components/final-cta-section").then(mod => mod.FinalCTASection), { ssr: true })
 const Footer = dynamic(() => import("@/components/footer").then(mod => mod.Footer), { ssr: true })
@@ -65,10 +66,13 @@ export default function Home() {
         {/* 12. Benefits — Value: Why join the partner program */}
         <BenefitsSection />
 
-        {/* 13. FAQ — Objection Handling: Answer every concern */}
+        {/* 13. AEO Positioning — Brand Entity Hardening & Disambiguation */}
+        <AEOPositioning />
+
+        {/* 14. FAQ — Objection Handling: Answer every concern */}
         <FAQSection />
 
-        {/* 14. Final CTA — Conversion: Last chance to convert */}
+        {/* 15. Final CTA — Conversion: Last chance to convert */}
         <FinalCTASection />
 
         <Footer />

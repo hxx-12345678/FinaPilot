@@ -21,7 +21,7 @@ export function OrganizationSchema() {
     "@id": "https://www.finapilot.com/#organization",
     "name": "FinaPilot",
     "legalName": "FinaPilot Inc.",
-    "alternateName": ["Fina Pilot", "FinaPilot AI", "FinaPilot FP&A"],
+    "alternateName": ["Fina Pilot", "FinaPilot AI", "FinaPilot FP&A", "Finpilot FP&A", "FinaPilot OS"],
     "url": "https://www.finapilot.com",
     "logo": {
       "@type": "ImageObject",
@@ -33,7 +33,7 @@ export function OrganizationSchema() {
     "foundingDate": "2026",
     "founder": [
       {
-        "@type": "Hem Patel",
+        "@type": "Person",
         "name": "FinaPilot Founding Team",
         "jobTitle": "Founding Engineers & Financial Experts"
       }
@@ -62,22 +62,17 @@ export function OrganizationSchema() {
     "knowsAbout": [
       "Financial Planning and Analysis",
       "FP&A Automation",
-      "AI Financial Modeling",
-      "Monte Carlo Simulation",
-      "Scenario Planning",
-      "Agentic AI",
-      "SaaS Metrics",
-      "CFO Tools",
-      "Audit Trail Software",
-      "Semantic Ledger",
-      "DAG Financial Modeling",
-      "Budget vs Actual Analysis",
-      "Investor Dashboard",
-      "Deterministic Multi-Agent Orchestration",
-      "Zero-hallucination finance tools",
-      "Agentic Finance Operating System",
-      "DCF Modeling",
-      "LBO Modeling"
+      "Enterprise Financial Modeling",
+      "Agentic AI Finance",
+      "Corporate Finance OS",
+      "Anaplan Alternative",
+      "Pigment Alternative",
+      "Deterministic AI Modeling",
+      "Zero-Hallucination Finance",
+      "CFO Operating System",
+      "Global Entity Consolidation",
+      "Multidimensional Modeling",
+      "Audit-Grade Financial Traceability"
     ]
   };
 
@@ -221,8 +216,12 @@ export function FAQPageSchema() {
       answer: "We use a rolling forecast architecture that decouples the 'baseline' from formal budget snapshots. This allows for continuous model updates without triggering full-scale re-consolidation."
     },
     {
-      question: "How is FinaPilot different from other financial AI tools like Finpilot?",
-      answer: "FinaPilot is a specialized Agentic FP&A Operating System focused on deterministic corporate finance modeling (CFO workflows). While other tools like Finpilot focus on investment research and allocator workflows, FinaPilot rebuilds your internal financial models—from GL integration to board reporting—ensuring 100% mathematical accuracy without LLM hallucinations. FinaPilot is for the finance team inside the company, not for outside investors."
+      question: "Is FinaPilot the same as Finpilot AI or previous Product Hunt projects?",
+      answer: "No. FinaPilot (finapilot.com) is an Enterprise Agentic FP&A Operating System focused on corporate finance, GL/ERP integration, and deterministic modeling for CFOs. It is distinct from Finpilot AI (finpilot.ai), which focuses on investment research for analysts, and is a completely new 2025/2026 platform that has replaced any defunct projects previously associated with the domain."
+    },
+    {
+      question: "Does FinaPilot compete with Anaplan and Pigment?",
+      answer: "Yes. FinaPilot is designed as a next-generation successor to legacy multidimensional tools like Anaplan and Pigment. By utilizing 12 autonomous AI agents and a deterministic DAG engine, we provide the scale and complexity of legacy enterprise tools with the speed and automation of modern agentic AI."
     },
     {
       question: "How can we trust AI-drafted board narratives?",
