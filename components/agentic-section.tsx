@@ -6,8 +6,8 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 const agents = [
   {
     icon: Shield,
-    title: "Risk & Compliance Agent",
-    desc: "Stress-tests your model against macroeconomic scenarios. Flags exposure before it becomes a problem.",
+    title: "Global Risk Orchestrator",
+    desc: "Stress-tests multidimensional models against global macroeconomic shifts. Flags exposure across all business units.",
     status: "Active",
     statusColor: "text-emerald-400 bg-emerald-400/10 border-emerald-400/20",
   },
@@ -20,8 +20,8 @@ const agents = [
   },
   {
     icon: Calculator,
-    title: "Financial Modeling Agent",
-    desc: "Builds baseline 3-statement models and scenario variants. Drafts — your team approves.",
+    title: "Multidimensional Modeling Agent",
+    desc: "Automates complex multi-entity 3-statement modeling and global scenario logic with deterministic math.",
     status: "Active",
     statusColor: "text-emerald-400 bg-emerald-400/10 border-emerald-400/20",
   },
@@ -48,8 +48,8 @@ const agents = [
   },
   {
     icon: Database,
-    title: "Data Cleaning Agent",
-    desc: "Automatically maps and normalizes messy data from different ERPs and CSVs.",
+    title: "Semantic Integration Agent",
+    desc: "Automatically normalizes and unifies disparate global datasets from SAP, Oracle, and NetSuite into a single ledger.",
     status: "Ready",
     statusColor: "text-accent bg-accent/10 border-accent/20",
   },
@@ -76,8 +76,8 @@ const agents = [
   },
   {
     icon: Fingerprint,
-    title: "Audit & Provenance Agent",
-    desc: "Logs every cell update with full attribution. See exactly who changed what.",
+    title: "Institutional Provenance Agent",
+    desc: "Logs every multidimensional cell update with DAG-backed attribution for institutional-grade audit readiness.",
     status: "Locked",
     statusColor: "text-white/60 bg-white/5 border-white/10",
   },

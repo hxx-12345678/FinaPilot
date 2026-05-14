@@ -6,31 +6,31 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 const problems = [
   {
     icon: Database,
-    title: "Scattered Data, Zero Visibility",
-    desc: "Your finance team wastes 80% of their time pulling data from disconnected ERPs, CRMs, and spreadsheets instead of doing actual analysis.",
-    stat: "80%",
-    statLabel: "Time lost to data wrangling",
+    title: "Global Multi-Entity Fragmentation",
+    desc: "Enterprise finance teams lose thousands of hours reconciling disparate data across global ERPs (SAP, Oracle, NetSuite), leading to critical delays in month-end close.",
+    stat: "75%",
+    statLabel: "Of time lost to data reconciliation",
   },
   {
     icon: AlertTriangle,
-    title: "Models Break With One Wrong Formula",
-    desc: "Your multi-sheet Excel model is one accidental keystroke away from disaster. Hidden circular references and #REF errors create silent risk for every board presentation.",
-    stat: "88%",
-    statLabel: "Of spreadsheets contain errors",
+    title: "Multidimensional Model Fragility",
+    desc: "Legacy multidimensional models and complex spreadsheets are one formula error away from an audit disaster. Hidden circularities create systemic risk in board reporting.",
+    stat: "90%",
+    statLabel: "Of large models contain errors",
   },
   {
     icon: Clock,
-    title: "Scenario Planning Takes Days, Not Minutes",
-    desc: "When the market shifts, your team needs 3 days to rebuild the forecast. By the time the analysis reaches your CFO's desk, the window to act has already closed.",
-    stat: "72hrs",
-    statLabel: "Average model rebuild time",
+    title: "Scenario Latency in Volatile Markets",
+    desc: "Re-forecasting across complex business units takes weeks in legacy tools. By the time the analysis reaches the CFO, the strategic window to act has already closed.",
+    stat: "14 Days",
+    statLabel: "Average enterprise re-forecast cycle",
   },
   {
     icon: HelpCircle,
-    title: "AI Tools Can't Be Trusted for Finance",
-    desc: "Generic AI tools hallucinate numbers without proof. No CFO can present AI-generated outputs to investors without understanding exactly how every number was calculated.",
-    stat: "0%",
-    statLabel: "Tolerance for guesswork",
+    title: "The AI 'Black Box' Audit Crisis",
+    desc: "Generic AI tools hallucinate financial data without mathematical proof. Institutional finance cannot deploy probabilistic AI that lacks cell-level data provenance.",
+    stat: "100%",
+    statLabel: "Requirement for audit traceability",
   },
 ]
 
@@ -50,10 +50,10 @@ export function ProblemSection() {
             The Problem
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-5 tracking-tight">
-            Stop fighting spreadsheets. Move to <span className="text-accent underline decoration-red-400">SOC 2 architecture ready</span> finance logic.
+            Stop fighting legacy modeling. Move to <span className="text-accent underline decoration-red-400">Deterministic Agentic AI</span> finance logic.
           </h2>
           <p className="text-base sm:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed">
-            You can't run a modern company on brittle spreadsheets. The cost of one formula error or one delayed forecast is too high.
+            Global organizations cannot run on brittle spreadsheets or black-box AI. The cost of one attribution error or one delayed forecast is an institutional risk.
           </p>
         </div>
 

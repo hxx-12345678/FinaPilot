@@ -5,46 +5,46 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 
 const featureCategories = [
   {
-    category: "Modeling & Simulation",
+    category: "Modeling & Orchestration",
     features: [
-      { icon: GitBranch, label: "Scenario Planning", desc: "Branch-based multi-track variant modeling." },
-      { icon: Zap, label: "Real-time What-IF", desc: "Instant impact analysis on P&L variables." },
-      { icon: TrendingUp, label: "Forecasting Engine", desc: "AI-driven predictive trajectory analysis." },
+      { icon: GitBranch, label: "Multidimensional Scenarios", desc: "Branch-based variant modeling for global entities." },
+      { icon: Zap, label: "Institutional What-IF", desc: "4ms impact analysis across complex P&L architectures." },
+      { icon: TrendingUp, label: "Agentic Forecasting", desc: "Autonomous predictive analysis with seasonality logic." },
     ]
   },
   {
-    category: "Governance & Trust",
+    category: "Governance & Data Integrity",
     features: [
-      { icon: Layers, label: "Semantic Ledger", desc: "Unified schema for disparate ERP sources." },
-      { icon: ShieldCheck, label: "Audit-Grade Traceability", desc: "DAG-backed cell lineages (SOC 2 level)." },
-      { icon: Cpu, label: "Model Architecture", desc: "Atomic structure for infinite scalability." },
+      { icon: Layers, label: "Global Semantic Ledger", desc: "Unified schema for global ERP (SAP, Oracle, NetSuite)." },
+      { icon: ShieldCheck, label: "Audit-Grade Traceability", desc: "Institutional DAG cell lineages (Audit-Ready)." },
+      { icon: Cpu, label: "Atomic Architecture", desc: "Structured modeling for infinite enterprise scale." },
     ]
   },
   {
-    category: "Board & Investors",
+    category: "Board & Global Reporting",
     features: [
-      { icon: LayoutDashboard, label: "Investor Dashboards", desc: "Live, read-only board reporting portals." },
-      { icon: Calculator, label: "Financial Modeling", desc: "Professional DCF, SaaS, and LBO modeling." },
-      { icon: Activity, label: "Alerts Management", desc: "Autonomous variance & anomaly detection." },
+      { icon: LayoutDashboard, label: "Board Portals", desc: "Live, read-only institutional reporting environments." },
+      { icon: Calculator, label: "Advanced Modeling", desc: "Multidimensional DCF, SaaS, LBO, and M&A logic." },
+      { icon: Activity, label: "Anomaly Intelligence", desc: "Autonomous global variance & anomaly detection." },
     ]
   },
   {
-    category: "Strategic Direction",
+    category: "Capital Allocation",
     features: [
-      { icon: BarChart3, label: "Monte Carlo Runway", desc: "Probabilistic cash survival projections." },
-      { icon: PieChart, label: "Budget vs Actual", desc: "Variance gap analysis with attribution." },
-      { icon: Users, label: "Resource Allocations", desc: "Headcount & CAPEX optimization logic." },
+      { icon: BarChart3, label: "Monte Carlo Risk", desc: "Probabilistic cash and risk survival projections." },
+      { icon: PieChart, label: "Variance Attribution", desc: "Gap analysis with mathematical volume/price attribution." },
+      { icon: Users, label: "Resource Optimization", desc: "Global headcount & CAPEX optimization logic." },
     ]
   },
 ]
 
 const outcomes = [
-  "Build clean 3-statement models (P&L, Balance Sheet, Cash Flow)",
-  "Run 10,000+ Monte Carlo scenarios in under 4 seconds",
-  "Track every assumption, change, and override automatically",
-  "Generate board-ready reports and variance narratives",
-  "Resolve circular references (interest/debt loops) without breaking",
-  "AI assists analysis — but humans approve every output",
+  "Automate global multi-entity consolidations (P&L, BS, Cash Flow)",
+  "Run 10,000+ Monte Carlo risk scenarios in under 4 seconds",
+  "Track every multidimensional change with full data provenance",
+  "Generate institutional board reports and variance narratives",
+  "Resolve complex circular logic (Debt/Interest) with deterministic math",
+  "Agentic AI automates the work — CFOs maintain 100% control",
 ]
 
 export function SolutionSection() {

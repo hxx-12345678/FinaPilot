@@ -29,7 +29,7 @@ export function OrganizationSchema() {
       "width": 512,
       "height": 512
     },
-    "description": "FinaPilot is an agentic AI-powered FP&A operating system that replaces brittle spreadsheets with structured, auditable financial models. Powered by 12 autonomous AI agents under full human control, FinaPilot delivers scenario planning, Monte Carlo simulations, semantic ledger unification, and audit-grade traceability for SaaS CFOs and finance teams.",
+    "description": "FinaPilot is an enterprise-grade Agentic AI FP&A operating system designed for global finance teams. Built on a deterministic, DAG-backed cell lineage engine, it replaces legacy multidimensional modeling tools with autonomous AI orchestration. FinaPilot delivers real-time scenario planning, Monte Carlo risk assessment, and institutional-grade audit traceability for complex corporate finance operations.",
     "foundingDate": "2026",
     "founder": [
       {
@@ -97,7 +97,7 @@ export function SoftwareApplicationSchema() {
     "@id": "https://www.finapilot.com/#software",
     "name": "FinaPilot",
     "alternateName": "FinaPilot AI FP&A OS",
-    "description": "Agentic AI-powered Financial Planning & Analysis operating system. Replace brittle spreadsheets with structured, auditable financial models powered by 12 autonomous AI agents — scenario planning, Monte Carlo simulations, semantic ledger, and audit-grade traceability under full human control.",
+    "description": "Enterprise-grade Agentic AI Financial Planning & Analysis operating system. FinaPilot replaces legacy enterprise planning tools and brittle spreadsheets with structured, auditable financial models powered by 12 autonomous AI agents. Features include deterministic DAG cell lineage, institutional-grade audit trails, and 4ms model recalculation for global finance teams.",
     "url": "https://www.finapilot.com",
     "applicationCategory": "BusinessApplication",
     "applicationSubCategory": "Financial Planning & Analysis Software",
@@ -113,23 +113,23 @@ export function SoftwareApplicationSchema() {
       "url": "https://www.finapilot.com/"
     },
     "featureList": [
-      "Branch-based multi-track scenario planning",
-      "Real-time what-if analysis on P&L variables",
-      "AI-driven predictive forecasting engine",
-      "Semantic ledger for disparate ERP unification",
-      "DAG-backed audit-grade cell lineage traceability (SOC 2 level)",
-      "Atomic model architecture for infinite scalability",
-      "Live read-only investor dashboards and board reporting",
-      "Professional DCF, SaaS, and LBO financial modeling",
-      "Autonomous variance and anomaly detection alerts",
-      "Monte Carlo probabilistic cash runway projections",
-      "Budget vs actual variance gap analysis with attribution",
+      "Branch-based multidimensional scenario planning",
+      "Real-time what-if analysis on complex P&L architectures",
+      "AI-driven predictive forecasting engine with seasonality adjustment",
+      "Semantic ledger for global ERP unification (NetSuite, Oracle, SAP)",
+      "DAG-backed audit-grade cell lineage traceability (Institutional level)",
+      "Atomic model architecture for infinite enterprise scalability",
+      "Live read-only board reporting and investor portals",
+      "Professional DCF, SaaS, LBO, and M&A financial modeling",
+      "Autonomous global variance and anomaly detection alerts",
+      "Monte Carlo probabilistic cash runway and risk projections",
+      "Budget vs actual variance gap analysis with mathematical attribution",
       "Headcount and CAPEX resource allocation optimization",
       "12 autonomous AI agents under human-in-the-loop governance",
-      "AES-256 encryption at rest, TLS 1.3 in transit",
+      "AES-256 encryption at rest, TLS 1.3 in transit, SOC 2 Ready",
       "Isolated tenant architecture with zero data cross-contamination",
-      "Excel and CSV upload with mapped data import",
-      "QuickBooks, Xero, Stripe, SAP, Oracle integrations"
+      "Intelligent data mapping for legacy model migration",
+      "Enterprise API connectors for NetSuite, SAP, Oracle, Workday, and Stripe"
     ],
     "screenshot": "https://www.finapilot.com/icon.svg",
     "softwareVersion": "2026.1",
@@ -201,8 +201,8 @@ export function FAQPageSchema() {
       answer: "We provide native API connectors for major ERPs including NetSuite, Sage Intacct, QuickBooks Online, Xero, and SAP. We also offer an intelligent CSV/Excel Import Wizard that normalizes trial labels into unified objects automatically."
     },
     {
-      question: "How is FinaPilot different from Anaplan or Adaptive Planning?",
-      answer: "Legacy tools require months of custom scripting and expensive consultants. FinaPilot is an active orchestration engine that deploys in days, using 12 autonomous AI agents to rebuild your logic into a structured, real-time environment that recalculates in under 4ms."
+      question: "How is FinaPilot different from Anaplan or Pigment?",
+      answer: "Legacy enterprise tools like Anaplan require months of expensive consulting and complex custom scripting. FinaPilot is an active orchestration engine that deploys in days, using 12 autonomous AI agents to rebuild your financial logic into a structured, real-time environment. Unlike the static models of legacy tools, FinaPilot offers 4ms recalculation speeds and DAG-backed data provenance that ensures 100% accuracy without black-box calculations."
     },
     {
       question: "What is the ROI of implementing AI in our FP&A workflow?",

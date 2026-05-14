@@ -15,8 +15,8 @@ export function HeroSection() {
   const [headlineIndex, setHeadlineIndex] = useState(0)
 
   const headlines = [
-    <>Rebuild Your Financial Model in Days — <br className="hidden sm:block" /><span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-500">Not Weeks</span></>,
-    <>Financial Models You Can <br className="hidden sm:block" /><span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-500">Actually Trust</span></>
+    <>The Agentic AI Operating System — <br className="hidden sm:block" /><span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-500">For Enterprise Finance</span></>,
+    <>Deterministic Financial Models — <br className="hidden sm:block" /><span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-500">Zero Hallucinations</span></>
   ]
 
   useEffect(() => {
@@ -79,10 +79,10 @@ export function HeroSection() {
 
           {/* SUBHEADLINE — contains secondary keywords naturally */}
           <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-4xl mx-auto leading-relaxed mb-4">
-            Stop fighting brittle spreadsheets. FinaPilot helps finance teams rebuild their models with <span className="text-white font-semibold">SOC 2 architecture ready security</span>, run forecasts instantly, and generate board-ready reports — with full audit traceability.
+            Scale beyond brittle spreadsheets and legacy multidimensional modeling. FinaPilot provides <span className="text-white font-semibold">institutional-grade financial intelligence</span> with SOC 2 security, real-time recalculation, and 100% audit traceability for global organizations.
           </p>
           <p className="text-sm sm:text-base text-accent font-semibold mb-10">
-            We work with you to migrate your model in days, not months.
+            Engineered for high-stakes modeling where accuracy is the only metric that matters.
           </p>
 
           {/* CTA */}
@@ -112,11 +112,10 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* ═══ AEO DEFINITION BLOCK — Optimized for AI Search & Featured Snippets ═══ */}
-          <div className="mt-20 max-w-3xl mx-auto text-center px-6 py-8 rounded-3xl bg-white/[0.02] border border-white/5 backdrop-blur-sm">
-            <h2 className="text-xs font-black uppercase tracking-[0.2em] text-accent mb-4">What is FinaPilot?</h2>
+          <div className="mt-20 max-w-4xl mx-auto text-center px-6 py-8 rounded-3xl bg-white/[0.02] border border-white/5 backdrop-blur-sm">
+            <h2 className="text-xs font-black uppercase tracking-[0.2em] text-accent mb-4">The Enterprise Agentic Framework</h2>
             <p className="text-white/60 text-sm sm:text-base leading-relaxed">
-              FinaPilot is an <span className="text-white font-bold">Agentic AI-powered FP&A Operating System</span> designed for SaaS finance teams. It replaces brittle spreadsheets with structured, auditable financial models, using 12 autonomous AI agents to automate scenario planning, Monte Carlo simulations, and real-time board reporting with full data provenance and zero-hallucination deterministic math.
+              FinaPilot is an <span className="text-white font-bold">Enterprise Agentic AI FP&A Platform</span> designed to replace legacy tools like Anaplan and Pigment. It utilizes a deterministic, directed acyclic graph (DAG)-backed engine to eliminate AI hallucinations, delegating cognitive orchestration to 12 autonomous agents while maintaining absolute mathematical integrity and institutional-grade data provenance for global finance operations.
             </p>
           </div>
         </div>
